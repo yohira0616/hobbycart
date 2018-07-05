@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+  nginx:
+    image: nginx
+  ap:
+    build: .
+    volumes:
+      - .:/hobbycart
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    command: bash -c "(yarn check || yarn install) && (bundle check || bundle install) && bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - .:/hobbycart
+      - gems:/gems
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql/data
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: hobbycart
+      MYSQL_PASSWORD: hobbycart11
+      MYSQL_DATABASE: hobbycart_development
+
+  redis:
+    image: redis
+
+volumes:
+  db-data:
+  gems:
