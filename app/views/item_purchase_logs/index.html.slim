@@ -1,0 +1,19 @@
+h1 Listing item_purchase_logs
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @item_purchase_logs.each do |item_purchase_log|
+      tr
+        td = link_to 'Show', item_purchase_log
+        td = link_to 'Edit', edit_item_purchase_log_path(item_purchase_log)
+        td = link_to 'Destroy', item_purchase_log, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Item purchase log', new_item_purchase_log_path

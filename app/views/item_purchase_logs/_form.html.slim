@@ -1,0 +1,9 @@
+= form_for @item_purchase_log do |f|
+  - if @item_purchase_log.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@item_purchase_log.errors.count, "error")} prohibited this item_purchase_log from being saved:"
+      ul
+        - @item_purchase_log.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
