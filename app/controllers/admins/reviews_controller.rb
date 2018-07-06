@@ -1,4 +1,4 @@
-module Admin
+module Admins
 
   class ReviewsController < ApplicationController
     before_action :set_revirew, only: [:show, :edit, :update, :destroy]

@@ -1,4 +1,4 @@
-module Admin
+module Admins
 
   class ReactionsController < ApplicationController
     before_action :set_reaction, only: [:show, :edit, :update, :destroy]
