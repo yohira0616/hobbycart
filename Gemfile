@@ -33,6 +33,7 @@ gem 'ransack'
 gem 'sorcery'
 gem 'slim-rails'
 gem 'gon'
+gem 'gretel'
 
 # Use Capistrano for deployment
 
