@@ -1,0 +1,9 @@
+= form_for @reaction do |f|
+  - if @reaction.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@reaction.errors.count, "error")} prohibited this reaction from being saved:"
+      ul
+        - @reaction.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

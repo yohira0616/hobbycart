@@ -1,0 +1,19 @@
+h1 Listing reactions
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @reactions.each do |reaction|
+      tr
+        td = link_to 'Show', reaction
+        td = link_to 'Edit', edit_reaction_path(reaction)
+        td = link_to 'Destroy', reaction, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Reaction', new_reaction_path
