@@ -9,4 +9,6 @@ ENV LANG=C.UTF-8 \
     BUNDLE_JOBS=4 \
     BUNDLE_PATH=/gems
 
+RUN gem update
+
 CMD ["bash"]
