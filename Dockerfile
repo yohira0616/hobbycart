@@ -6,8 +6,7 @@ WORKDIR /hobbycart
 ENV LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
     ROOT_PATH=/hobbycart \
-    BUNDLE_JOBS=4 \
-    BUNDLE_PATH=/gems
+    BUNDLE_JOBS=4
 
 RUN gem update
 

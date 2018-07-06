@@ -13,7 +13,7 @@ services:
     command: bash -c "(bundle check || bundle install) && bundle exec rails s -b '0.0.0.0'"
     volumes:
       - .:/hobbycart
-      - gems:/gems
+      - gems:/usr/local/bundle
     depends_on:
       - db
   db:
@@ -33,4 +33,6 @@ services:
 
 volumes:
   hobbycart-db-data:
+    driver: local
   gems:
+    driver: local
