@@ -1,0 +1,2 @@
+class Revirew < ApplicationRecord
+end
