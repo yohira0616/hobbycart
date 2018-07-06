@@ -4,6 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bulma": "^0.7.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16"
