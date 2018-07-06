@@ -32,9 +32,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'ransack'
 gem 'sorcery'
 gem 'slim-rails'
-# これ必要ないかも
-gem 'omniauth'
-gem 'omniauth-twitter'
+gem 'gon'
 
 # Use Capistrano for deployment
 
