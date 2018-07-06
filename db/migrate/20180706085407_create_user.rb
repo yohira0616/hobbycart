@@ -11,7 +11,7 @@ class CreateUser < ActiveRecord::Migration[5.2]
 
       t.string :screen_name, null: false
       t.string :name
-      t.text :description, null: false, default: ''
+      t.text :description
     end
   end
 end
