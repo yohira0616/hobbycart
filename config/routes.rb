@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  # 認証
+
+  resources :user_sessions
+  resources :users
+  get 'login' => 'user_sessions#new', as: :login
+  get 'logout' => 'user_sessions#destroy', as: :logout
+  get 'oauths/oauth'
+  get 'oauths/callback'
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
+
   scope :admin do
     resources :reactions
     resources :revirews
