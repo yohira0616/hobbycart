@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  nginx:
-    image: nginx
+  #nginx:
+  #  image: nginx
   ap:
     build: .
     volumes:
