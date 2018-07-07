@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :items, only: %i(index show)
 
-  scope :users do
+  namespace :users do
     get 'signup' => "new"
     post 'signup' => "create"
     get 'leave' => "leave"
@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   end
 
 
-  scope :admin do
+  namespace :admins do
+    get 'dashboard' => 'dashboard#show'
     resources :reactions
     resources :revirews
     resources :comments
