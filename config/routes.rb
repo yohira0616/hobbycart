@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :users
   get 'login' => 'user_sessions#new', as: :login
   get 'logout' => 'user_sessions#destroy', as: :logout
-  get 'oauths/oauth'
-  get 'oauths/callback'
-  post "oauth/callback" => "oauths#callback"
-  get "oauth/callback" => "oauths#callback"
+  #get 'oauths/oauth'
+  #get 'oauths/callback'
+  post "/oauth/twitter/callback" => "oauths#callback"
+  get "/oauth/twitter/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
 
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#show'
     resources :users
     resources :reactions
-    resources :revirews
+    resources :reviews
     resources :comments
     resources :items
     resources :item_purchase_logs
