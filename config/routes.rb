@@ -12,6 +12,17 @@ Rails.application.routes.draw do
   get "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
 
+
+  resources :items, only: %i(index show)
+
+  scope :users do
+    get 'signup' => "new"
+    post 'signup' => "create"
+    get 'leave' => "leave"
+    delete 'destroy' => "destroy"
+  end
+
+
   scope :admin do
     resources :reactions
     resources :revirews
