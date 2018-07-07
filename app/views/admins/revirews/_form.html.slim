@@ -1,9 +1,0 @@
-= form_for @revirew do |f|
-  - if @revirew.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@revirew.errors.count, "error")} prohibited this revirew from being saved:"
-      ul
-        - @revirew.errors.full_messages.each do |message|
-          li = message
-
-  .actions = f.submit
