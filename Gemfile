@@ -34,6 +34,7 @@ gem 'sorcery'
 gem 'slim-rails'
 gem 'gon'
 gem 'gretel'
+gem 'kaminari'
 
 # Use Capistrano for deployment
 
