@@ -13,3 +13,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+// TODO 完全に消し去りたい
