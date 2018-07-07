@@ -1,5 +1,5 @@
 module Admins
-  class DashboardController < ApplicationController
+  class DashboardController < AdminBaseController
 
     def show
 

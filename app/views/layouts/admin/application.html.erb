@@ -7,13 +7,12 @@
 
     <%= Gon::Base.render_data %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
+    <%= render 'shared/admins/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
