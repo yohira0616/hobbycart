@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     get 'dashboard' => 'dashboard#show'
+    resources :users
     resources :reactions
     resources :revirews
     resources :comments
