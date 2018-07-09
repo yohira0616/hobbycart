@@ -13,7 +13,7 @@ services:
     command: bash -c "(bundle check || bundle install) && bundle exec rails s -b '0.0.0.0'"
     volumes:
       - .:/hobbycart
-      - gems:/usr/local/bundle
+      #- gems:/usr/local/bundle
     depends_on:
       - db
   db:
@@ -26,10 +26,10 @@ services:
       MYSQL_USER: hobbycart
       MYSQL_PASSWORD: hobbycart11
       MYSQL_DATABASE: hobbycart_development
-  adminer:
-    image: adminer
-    ports:
-      - 8080:8080
+#  adminer:
+#    image: adminer
+#    ports:
+#      - 8080:8080
 
 volumes:
   hobbycart-db-data:
