@@ -1,0 +1,50 @@
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# 複数行での「lambda」で「->」による省略記法を許可
+Lambda:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+# 複雑さの上限指標を定義
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/MethodLength:
+  Max: 50
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - node_modules/**/*
+    - bin/**/*
+    - test/**/*
+    - config/**/*
+    - log/**/*
+    - public/**/*
+    - spec/**/*
+    - Gemfile
+    - Capfile
+    - Rakefile

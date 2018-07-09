@@ -1,23 +1,14 @@
 class UsersController < ApplicationController
 
   # サインアップ画面
-  def new
+  def new; end
 
-  end
-
-  def create
-
-  end
+  def create; end
 
   # 退会確認画面
-  def leave
-
-  end
+  def leave; end
 
   # 退会
-  def destroy
-
-  end
-
+  def destroy; end
 
 end

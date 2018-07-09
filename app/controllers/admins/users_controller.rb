@@ -1,34 +1,19 @@
 module Admins
   class UsersController < AdminBaseController
 
+    def index; end
 
-    def index
+    def show; end
 
-    end
+    def new; end
 
-    def show
+    def edit; end
 
-    end
+    def create; end
 
-    def new
+    def update; end
 
-    end
-
-    def edit
-
-    end
-
-    def create
-
-    end
-
-    def update
-
-    end
-
-    def destroy
-
-    end
+    def destroy; end
 
   end
 end

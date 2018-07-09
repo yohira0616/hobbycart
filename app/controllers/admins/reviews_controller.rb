@@ -1,7 +1,6 @@
 module Admins
-
   class ReviewsController < ApplicationController
-    before_action :set_revirew, only: [:show, :edit, :update, :destroy]
+    before_action :set_revirew, only: %i[show edit update destroy]
 
     # GET /revirews
     # GET /revirews.json
@@ -11,8 +10,7 @@ module Admins
 
     # GET /revirews/1
     # GET /revirews/1.json
-    def show
-    end
+    def show; end
 
     # GET /revirews/new
     def new
@@ -20,8 +18,7 @@ module Admins
     end
 
     # GET /revirews/1/edit
-    def edit
-    end
+    def edit; end
 
     # POST /revirews
     # POST /revirews.json
@@ -30,11 +27,11 @@ module Admins
 
       respond_to do |format|
         if @revirew.save
-          format.html {redirect_to @revirew, notice: 'Review was successfully created.'}
-          format.json {render :show, status: :created, location: @revirew}
+          format.html { redirect_to @revirew, notice: 'Review was successfully created.' }
+          format.json { render :show, status: :created, location: @revirew }
         else
-          format.html {render :new}
-          format.json {render json: @revirew.errors, status: :unprocessable_entity}
+          format.html { render :new }
+          format.json { render json: @revirew.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -44,11 +41,11 @@ module Admins
     def update
       respond_to do |format|
         if @revirew.update(revirew_params)
-          format.html {redirect_to @revirew, notice: 'Review was successfully updated.'}
-          format.json {render :show, status: :ok, location: @revirew}
+          format.html { redirect_to @revirew, notice: 'Review was successfully updated.' }
+          format.json { render :show, status: :ok, location: @revirew }
         else
-          format.html {render :edit}
-          format.json {render json: @revirew.errors, status: :unprocessable_entity}
+          format.html { render :edit }
+          format.json { render json: @revirew.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -58,8 +55,8 @@ module Admins
     def destroy
       @revirew.destroy
       respond_to do |format|
-        format.html {redirect_to revirews_url, notice: 'Review was successfully destroyed.'}
-        format.json {head :no_content}
+        format.html { redirect_to revirews_url, notice: 'Review was successfully destroyed.' }
+        format.json { head :no_content }
       end
     end
 
@@ -75,5 +72,4 @@ module Admins
       params.fetch(:revirew, {})
     end
   end
-
 end

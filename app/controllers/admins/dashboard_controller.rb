@@ -1,8 +1,6 @@
 module Admins
   class DashboardController < AdminBaseController
 
-    def show
-
-    end
+    def show; end
   end
 end

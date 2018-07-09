@@ -1,1 +1,1 @@
-json.partial! "revirews/revirew", revirew: @revirew
+json.partial! 'revirews/revirew', revirew: @revirew
