@@ -8,6 +8,8 @@ class CreateUser < ActiveRecord::Migration[5.2]
       # Twitter認証からの動線
       t.string :access_token
       t.string :access_token_secret
+      t.string :uid
+      t.string :provider
 
       t.string :screen_name, null: false
       t.string :name

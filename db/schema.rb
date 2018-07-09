@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_06_151031) do
+ActiveRecord::Schema.define(version: 2018_07_09_092503) do
+
+  create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_authentications_on_user_id"
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -68,6 +77,8 @@ ActiveRecord::Schema.define(version: 2018_07_06_151031) do
     t.string "salt"
     t.string "access_token"
     t.string "access_token_secret"
+    t.string "uid"
+    t.string "provider"
     t.string "screen_name", null: false
     t.string "name"
     t.text "description"

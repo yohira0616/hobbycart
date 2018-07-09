@@ -21,15 +21,17 @@ services:
     # restart: always
     volumes:
       - hobbycart-db-data:/var/lib/mysql
+    ports:
+      - "4306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_USER: hobbycart
       MYSQL_PASSWORD: hobbycart11
       MYSQL_DATABASE: hobbycart_development
-#  adminer:
-#    image: adminer
-#    ports:
-#      - 8080:8080
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
 
 volumes:
   hobbycart-db-data:

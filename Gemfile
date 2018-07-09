@@ -38,6 +38,7 @@ gem 'kaminari'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'oauth2'
 
 # Use Capistrano for deployment
 
