@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   resources :users
   get 'login' => 'user_sessions#new', as: :login
   get 'logout' => 'user_sessions#destroy', as: :logout
-  #get 'oauths/oauth'
-  #get 'oauths/callback'
-  #post "/oauth/callback" => "oauths#callback"
-  get "/auth/twitter/callback" => "oauths#callback"
+  get "/auth/:provider/callback" => "oauths#callback"
   get "/auth/:provider" => "oauths#oauth", as: :auth_at_provider
 
 
