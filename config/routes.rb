@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'logout' => 'user_sessions#destroy', as: :logout
   #get 'oauths/oauth'
   #get 'oauths/callback'
-  post "/oauth/twitter/callback" => "oauths#callback"
-  get "/oauth/twitter/callback" => "oauths#callback"
-  get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
+  post "/auth/:provider/callback" => "oauths#callback"
+  get "/auth/:provider/callback" => "oauths#callback"
+  #get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
 
 
   resources :items, only: %i(index show)
