@@ -7,7 +7,8 @@ class OauthsController < ApplicationController
   def callback
     provider = params[:provider]
     if @user = login_from(provider)
-      redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+      flash[:primary] = "ログインしました"
+      redirect_to root_path
     else
       begin
         @user = create_from(provider)
@@ -15,10 +16,12 @@ class OauthsController < ApplicationController
 
         reset_session # protect from session fixation attack
         auto_login(@user)
-        redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+        flash[:primary] = "ログインしました"
+        redirect_to root_path
       rescue StandardError => e
         logger.error e
-        redirect_to root_path, alert: "Failed to login from #{provider.titleize}!"
+        flash[:danger] = "ログインに失敗しました..."
+        redirect_to root_path
       end
     end
   end

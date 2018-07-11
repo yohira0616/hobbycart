@@ -1,2 +1,5 @@
+// flashで使用する属性は以下の通り
+// primary,secondary,success,danger,warning,info,light,dark
+
 - flash.each do |type,msg|
-  div class="alert alert-#{type}" = msg
+  div class="alert alert-#{type}" role="alert" = msg

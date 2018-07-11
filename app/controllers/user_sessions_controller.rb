@@ -4,6 +4,8 @@ class UserSessionController < ApplicationController
   def new; end
 
   # セッション破棄
-  def destroy; end
+  def destroy
+    logout
+  end
 
 end
