@@ -4,10 +4,11 @@ module Api
 
     def create
 
+      render json: {}, status: 200
     end
 
     def destroy
-
+      render json: {}, status: 200
     end
 
     private

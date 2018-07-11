@@ -7,7 +7,7 @@ module Api
     end
 
     def destroy
-
+      render json: {}, status: 200
     end
 
     private
