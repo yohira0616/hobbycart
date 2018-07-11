@@ -45,11 +45,29 @@ services:
     image: adminer
     ports:
       - 8080:8080
+  # TODO: あとで整備する
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.1
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - hobbycart-esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
 
 volumes:
   hobbycart-db-data:
     driver: local
   hobbycart-test-db-data:
+    driver: local
+  hobbycart-esdata:
     driver: local
   gems:
     driver: local
