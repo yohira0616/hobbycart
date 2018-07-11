@@ -1,19 +1,9 @@
-h1 Listing reviews
+- breadcrumb :reviews
+.container
+  h1 レビュー一覧
+  == breadcrumbs
 
-table
-  thead
-    tr
-      th
-      th
-      th
+  = render 'search'
+  = render 'reviews',reviews: @reviews
 
-  tbody
-    - @reviews.each do |review|
-      tr
-        td = link_to 'Show', review
-        td = link_to 'Edit', edit_review_path(review)
-        td = link_to 'Destroy', review, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New review', new_review_path
+  = paginate @reviews

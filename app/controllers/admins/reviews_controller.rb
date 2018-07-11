@@ -5,7 +5,8 @@ module Admins
     # GET /reviews
     # GET /reviews.json
     def index
-      @reviews = Review.all
+      @q = Review.ransack(params[:q])
+      @reviews = @q.result.includes(:users, :items).page(params[:page])
     end
 
     # GET /reviews/1

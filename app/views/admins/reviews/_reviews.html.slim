@@ -8,11 +8,11 @@ table.table
       th scope="col" 作成日時
       th scope="col" 更新日時
   tbody
-    - comments.each do |comment|
+    - reviews.each do |review|
       tr
-        td = comment.id
-        td = comment.body
-        td = comment.user.screen_name
-        td = comment.item.name
-        td = comment.created_at
-        td = comment.updated_at
+        td = review.id
+        td = review.body
+        td = review.user.screen_name
+        td = review.item.name
+        td = review.created_at
+        td = review.updated_at
