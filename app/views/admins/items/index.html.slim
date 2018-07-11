@@ -11,9 +11,9 @@ table
     - @items.each do |item|
       tr
         td = link_to 'Show', item
-        td = link_to 'Edit', edit_item_path(item)
+        td = link_to 'Edit', edit_admins_item_path(item)
         td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Item', new_item_path
+= link_to 'New Item', new_admins_item_path
