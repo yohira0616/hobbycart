@@ -1,3 +1,6 @@
 .container
   = render 'items/search_form'
-  = render 'items/item_card'
+  - @items.each do |item|
+    = render 'item_card', item: item
+
+  = paginate @items
