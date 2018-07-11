@@ -1,8 +1,9 @@
-h1 Editing item
+.container
+  h1 商品情報の編集
 
-== render 'form'
+  == render 'form'
 
-=> link_to 'Show', @item
-'|
-=< link_to 'Back', admins_items_path
+  = button_to 'この商品を削除',admins_item_path(@item), method: :delete, class: 'btn btn-danger'
+
+  = link_to '一覧に戻る', admins_items_path, class: 'btn btn-light'
 
