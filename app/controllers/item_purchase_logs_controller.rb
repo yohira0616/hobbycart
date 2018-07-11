@@ -6,4 +6,10 @@ class ItemPurchaseLogsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
+  def create_params
+    # TODO
+  end
+
 end
