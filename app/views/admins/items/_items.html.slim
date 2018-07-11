@@ -6,6 +6,7 @@ table.table
       th scope="col" 価格
       th scope="col" 公開状態
       th scope="col" 説明
+      th scope="col" いいね数
   tbody
     - items.each do |item|
       tr
@@ -14,3 +15,4 @@ table.table
         td = item.price
         td = item.status
         td = item.description
+        td = item.comments.count
