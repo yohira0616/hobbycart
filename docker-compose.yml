@@ -28,6 +28,7 @@ services:
       MYSQL_USER: hobbycart
       MYSQL_PASSWORD: hobbycart11
       MYSQL_DATABASE: hobbycart_development
+  # TODO create testdb
   adminer:
     image: adminer
     ports:
