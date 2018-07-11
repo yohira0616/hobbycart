@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     get 'dashboard' => 'dashboard#show'
-    resources :users
+    resources :users, only: %i(index)
     resources :reactions
     resources :reviews
     resources :comments
