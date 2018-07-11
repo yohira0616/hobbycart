@@ -26,10 +26,10 @@ Rails.application.routes.draw do
     resources :item_purchase_logs
   end
 
-  namespace :apis do
+  namespace :api do
     resources :comments, only: %i(create destroy)
-
-
+    resources :reactions, only: %i(create destroy)
+    resources :reviews, only: %i(create destroy)
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
