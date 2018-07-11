@@ -45,11 +45,13 @@ crumb :review do |review|
 end
 
 crumb :item_purchase_logs do
-
+  link "購入ログ", admins_item_purchase_logs_path
+  parent :root
 end
 
 crumb :reactions do
-
+  link "反応ログ", admins_reactions_path
+  parent :root
 end
 
 # フロント TODO

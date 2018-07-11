@@ -5,7 +5,8 @@ module Admins
     # GET /item_purchase_logs
     # GET /item_purchase_logs.json
     def index
-      @item_purchase_logs = ItemPurchaseLog.all
+      @q = ItemPurchaseLog.ransack(params[:q])
+      @item_purchase_logs = @q.result.page(params[:page])
     end
 
     # GET /item_purchase_logs/1

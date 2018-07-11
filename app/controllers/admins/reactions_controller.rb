@@ -5,7 +5,8 @@ module Admins
     # GET /reactions
     # GET /reactions.json
     def index
-      @reactions = Reaction.all
+      @q = Reaction.ransack(params[:q])
+      @reactions = @q.result.page(params[:page])
     end
 
     # GET /reactions/1
