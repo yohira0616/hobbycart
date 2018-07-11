@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-    # 暫定
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result.page(params[:page])
   end
 
-  def show; end
+  def show
+    @item = Item.find_by(params[:id])
+  end
 end
