@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2018_07_09_092503) do
     t.string "screen_name", null: false
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

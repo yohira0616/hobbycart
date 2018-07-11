@@ -16,6 +16,7 @@ services:
       #- gems:/usr/local/bundle
     depends_on:
       - db
+      - db_test
   db:
     image: mysql:5.7
     # restart: always
@@ -28,7 +29,18 @@ services:
       MYSQL_USER: hobbycart
       MYSQL_PASSWORD: hobbycart11
       MYSQL_DATABASE: hobbycart_development
-  # TODO create testdb
+  db_test:
+    image: mysql:5.7
+    # restart: always
+    volumes:
+      - hobbycart-test-db-data:/var/lib/mysql
+    ports:
+      - "4307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: hobbycart
+      MYSQL_PASSWORD: hobbycart11
+      MYSQL_DATABASE: hobbycart_test
   adminer:
     image: adminer
     ports:
@@ -36,6 +48,8 @@ services:
 
 volumes:
   hobbycart-db-data:
+    driver: local
+  hobbycart-test-db-data:
     driver: local
   gems:
     driver: local
