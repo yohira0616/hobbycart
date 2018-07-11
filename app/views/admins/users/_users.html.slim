@@ -7,21 +7,10 @@ table.table
       th scope="col" メールアドレス
       th scope="col" プロフィール
   tbody
-    tr
-      td 1
-      td Mark
-      td Otto
-      td Otto
-      td mdo
-    tr
-      td 2
-      td Jacob
-      td Thornton
-      td fat
-      td fat
-    tr
-      td 3
-      td Larry
-      td the Bird
-      td twitter
-      td twitter
+    - users.each do |user|
+      tr
+        td = user.id
+        td = user.name
+        td = user.screen_name
+        td = user.email
+        td = user.description
