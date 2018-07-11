@@ -1,5 +1,5 @@
 module Admins
-  class ReactionsController < ApplicationController
+  class ReactionsController < AdminBaseController
     before_action :set_reaction, only: %i[show edit update destroy]
 
     # GET /reactions

@@ -1,5 +1,5 @@
 module Admins
-  class ItemPurchaseLogsController < ApplicationController
+  class ItemPurchaseLogsController < AdminBaseController
     before_action :set_item_purchase_log, only: %i[show edit update destroy]
 
     # GET /item_purchase_logs

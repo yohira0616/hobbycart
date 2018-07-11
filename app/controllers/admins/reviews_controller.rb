@@ -1,5 +1,5 @@
 module Admins
-  class ReviewsController < ApplicationController
+  class ReviewsController < AdminBaseController
     before_action :set_revirew, only: %i[show edit update destroy]
 
     # GET /revirews
