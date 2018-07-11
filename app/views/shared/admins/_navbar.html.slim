@@ -1,5 +1,5 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to 'Hobbycart管理',admins_dashboard_path,class:'navbar-brand'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to 'Hobbycart管理', admins_dashboard_path, class: 'navbar-brand'
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item
@@ -14,3 +14,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         = link_to '購入ログ', admins_item_purchase_logs_path, class: 'nav-link'
       li.nav-item
         = link_to '反応ログ', admins_reactions_path, class: 'nav-link'
+      li.nav-item
+        = link_to 'ログアウト', logout_path, class: 'nav-link'
