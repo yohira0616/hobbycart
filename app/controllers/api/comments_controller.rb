@@ -3,7 +3,7 @@ module Api
     # TODO: ログイン判定
 
     def create
-
+      render json: {}, status: 200
     end
 
     def destroy
