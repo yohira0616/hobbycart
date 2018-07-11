@@ -26,10 +26,12 @@ module Admins
     # POST /items.json
     def create
       @item = Item.new(item_params)
+      @item.thumbnail.attach(item_params[:thumbnail]) if item_params[:thumbnail].present?
 
       respond_to do |format|
         if @item.save
-          format.html {redirect_to admins_item_path(@item), notice: 'Item was successfully created.'}
+          flash[:success] = '商品が追加されました'
+          format.html {redirect_to admins_item_path(@item)}
           format.json {render :show, status: :created, location: @item}
         else
           format.html {render :new}

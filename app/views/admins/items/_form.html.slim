@@ -17,6 +17,8 @@
       .custom-file
         = f.label :thumbnail, '写真', class: 'custom-file-label'
         = f.file_field :thumbnail, class: 'custom-file-input'
+      - if (!@item.new_record?) && @item.thumbnail.present?
+        = image_tag url_for(@item.thumbnail), class: 'img-thumbnail'
     .field
       = f.label :price, '価格'
       = f.number_field :price, class: 'form-control', required: true
