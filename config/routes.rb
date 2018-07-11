@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   # 認証
-
   resources :user_sessions
   resources :users
   get 'login' => 'user_sessions#new', as: :login
@@ -9,10 +8,9 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "oauths#callback"
   get "/auth/:provider" => "oauths#oauth", as: :auth_at_provider
 
-
   resources :items, only: %i(index show)
-
   resources :users, only: :destroy
+  resources :item_purchase_logs, only: :create
 
   get 'settings' => 'settings#show'
 
