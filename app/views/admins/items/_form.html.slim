@@ -1,9 +1,27 @@
-= form_for @item do |f|
+= form_with model: [:admins, @item], local: true do |f|
   - if @item.errors.any?
     #error_explanation
       h2 = "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
       ul
         - @item.errors.full_messages.each do |message|
           li = message
+  .form-group
+    .field
+      = f.label :name, '商品名'
+      = f.text_field :name, class: 'form-control', required: true
+    .field
+      = f.label :description, '説明'
+      = f.text_area :description, class: 'form-control'
+    .field
+      = f.label :thumbnail, '写真'
+      .custom-file
+        = f.label :thumbnail, '写真', class: 'custom-file-label'
+        = f.file_field :thumbnail, class: 'custom-file-input'
+    .field
+      = f.label :price, '価格'
+      = f.number_field :price, class: 'form-control', required: true
+    .field
+      = f.label :status, '公開ステータス'
+      = f.select :status, Item.statuses.keys.to_a, {}, required: true, class: 'form-control'
 
-  .actions = f.submit
+  .actions = f.submit '追加', class: 'btn btn-success'
