@@ -10,7 +10,7 @@ crumb :users do
 end
 
 crumb :user do |user|
-  link user.screen_name,admins_user_path(user)
+  link user.screen_name, admins_user_path(user)
   parent :users
 end
 
@@ -25,17 +25,23 @@ crumb :item do |item|
 end
 
 crumb :comments do
-  link "コメント",admins_comments_path
+  link "コメント", admins_comments_path
   parent :root
 end
 
 crumb :comment do |comment|
-  link comment.id,admins_comment_path(comment)
+  link comment.id, admins_comment_path(comment)
   parent :comments
 end
 
 crumb :reviews do
+  link "レビュー", admins_reviews_path
+  parent :root
+end
 
+crumb :review do |review|
+  link review.id, admins_review_path(review)
+  parent :reviews
 end
 
 crumb :item_purchase_logs do
