@@ -1,5 +1,7 @@
 .container
+  = render 'item_card', item: @item
 
-
-  = link_to 'この商品を編集', edit_admins_item_path(@item)
-  = link_to '一覧へ戻る', admins_items_path
+  p
+    = link_to 'この商品を編集', edit_admins_item_path(@item), class: 'btn btn-light'
+  p
+    = link_to '一覧へ戻る', admins_items_path, class: 'btn btn-light'

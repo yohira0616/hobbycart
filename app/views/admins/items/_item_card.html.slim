@@ -1,0 +1,7 @@
+.card
+  .card-header = item.name
+  = image_tag url_for(item.thumbnail), class: 'card-img-top img-thumbnail'
+  .card-body
+    //h5.card-title Special title treatment
+    p.card-text = item.description
+    p.card-text = item.price
