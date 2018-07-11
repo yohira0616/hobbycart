@@ -1,6 +1,8 @@
 .container
+  = render 'shared/dummy_notification'
   h1 TopController
   p = link_to 'Login with Twitter', '/auth/twitter'
   p = link_to 'logout', logout_path
 
   p = link_to '設定', settings_path
+
