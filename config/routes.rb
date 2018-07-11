@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :users, only: :destroy
 
+  get 'settings' => 'settings#show'
+
   namespace :admins do
     get 'dashboard' => 'dashboard#show'
     resources :users
