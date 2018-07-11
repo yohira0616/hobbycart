@@ -1,7 +1,10 @@
 module Admins
   class UsersController < AdminBaseController
 
-    def index; end
+    def index
+      @q = User.ransack(params[:q])
+      @users= @q.result.page(params[:page])
+    end
 
     def show; end
 
