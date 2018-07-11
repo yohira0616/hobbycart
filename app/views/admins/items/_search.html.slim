@@ -1,0 +1,9 @@
+= search_form_for @q, url: admins_items_url do |f|
+  .form-group
+    = f.label :name_cont, '商品名'
+    = f.search_field :name_cont, class: 'form-control'
+    = f.label :price_eq, '価格'
+    = f.search_field :price_eq, class: 'form-control'
+    = f.label :description_cont, '説明'
+    = f.search_field :description_cont, class: 'form-control'
+  = f.submit '検索', class: 'btn btn-primary'

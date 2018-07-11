@@ -1,19 +1,8 @@
-h1 Listing items
+.container
+  h1 商品一覧
 
-table
-  thead
-    tr
-      th
-      th
-      th
+  //= render 'search'
 
-  tbody
-    - @items.each do |item|
-      tr
-        td = link_to 'Show', item
-        td = link_to 'Edit', edit_admins_item_path(item)
-        td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
+  = render 'items', items: @items
 
-br
-
-= link_to 'New Item', new_admins_item_path
+  = link_to '新商品の追加', new_admins_item_path,class:'btn btn-light'

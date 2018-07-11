@@ -1,0 +1,16 @@
+table.table
+  thead
+    tr
+      th scope="col" id
+      th scope="col" 商品名
+      th scope="col" 価格
+      th scope="col" 公開状態
+      th scope="col" 説明
+  tbody
+    - items.each do |item|
+      tr
+        td = item.id
+        td = link_to item.name,admins_item_path(item)
+        td = item.price
+        td = item.status
+        td = item.description
