@@ -1,61 +1,61 @@
 module Admins
   class ReviewsController < AdminBaseController
-    before_action :set_revirew, only: %i[show edit update destroy]
+    before_action :set_review, only: %i[show edit update destroy]
 
-    # GET /revirews
-    # GET /revirews.json
+    # GET /reviews
+    # GET /reviews.json
     def index
-      @revirews = Review.all
+      @reviews = Review.all
     end
 
-    # GET /revirews/1
-    # GET /revirews/1.json
+    # GET /reviews/1
+    # GET /reviews/1.json
     def show; end
 
-    # GET /revirews/new
+    # GET /reviews/new
     def new
-      @revirew = Review.new
+      @review = Review.new
     end
 
-    # GET /revirews/1/edit
+    # GET /reviews/1/edit
     def edit; end
 
-    # POST /revirews
-    # POST /revirews.json
+    # POST /reviews
+    # POST /reviews.json
     def create
-      @revirew = Review.new(revirew_params)
+      @review = Review.new(review_params)
 
       respond_to do |format|
-        if @revirew.save
-          format.html { redirect_to @revirew, notice: 'Review was successfully created.' }
-          format.json { render :show, status: :created, location: @revirew }
+        if @review.save
+          format.html { redirect_to @review, notice: 'Review was successfully created.' }
+          format.json { render :show, status: :created, location: @review }
         else
           format.html { render :new }
-          format.json { render json: @revirew.errors, status: :unprocessable_entity }
+          format.json { render json: @review.errors, status: :unprocessable_entity }
         end
       end
     end
 
-    # PATCH/PUT /revirews/1
-    # PATCH/PUT /revirews/1.json
+    # PATCH/PUT /reviews/1
+    # PATCH/PUT /reviews/1.json
     def update
       respond_to do |format|
-        if @revirew.update(revirew_params)
-          format.html { redirect_to @revirew, notice: 'Review was successfully updated.' }
-          format.json { render :show, status: :ok, location: @revirew }
+        if @review.update(review_params)
+          format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+          format.json { render :show, status: :ok, location: @review }
         else
           format.html { render :edit }
-          format.json { render json: @revirew.errors, status: :unprocessable_entity }
+          format.json { render json: @review.errors, status: :unprocessable_entity }
         end
       end
     end
 
-    # DELETE /revirews/1
-    # DELETE /revirews/1.json
+    # DELETE /reviews/1
+    # DELETE /reviews/1.json
     def destroy
-      @revirew.destroy
+      @review.destroy
       respond_to do |format|
-        format.html { redirect_to revirews_url, notice: 'Review was successfully destroyed.' }
+        format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -63,13 +63,13 @@ module Admins
     private
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_revirew
-      @revirew = Review.find(params[:id])
+    def set_review
+      @review = Review.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def revirew_params
-      params.fetch(:revirew, {})
+    def review_params
+      params.fetch(:review, {})
     end
   end
 end

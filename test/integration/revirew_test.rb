@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RevirewTest < ActionDispatch::IntegrationTest
+class reviewTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

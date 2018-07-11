@@ -23,10 +23,10 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe RevirewsController, type: :controller do
+RSpec.describe reviewsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Revirew. As you add validations to Revirew, be sure to
+  # review. As you add validations to review, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,12 +38,12 @@ RSpec.describe RevirewsController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # RevirewsController. Be sure to keep this updated too.
+  # reviewsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      revirew = Revirew.create! valid_attributes
+      review = review.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,8 +51,8 @@ RSpec.describe RevirewsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      revirew = Revirew.create! valid_attributes
-      get :show, params: {id: revirew.to_param}, session: valid_session
+      review = review.create! valid_attributes
+      get :show, params: {id: review.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -66,29 +66,29 @@ RSpec.describe RevirewsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      revirew = Revirew.create! valid_attributes
-      get :edit, params: {id: revirew.to_param}, session: valid_session
+      review = review.create! valid_attributes
+      get :edit, params: {id: review.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Revirew" do
+      it "creates a new review" do
         expect {
-          post :create, params: {revirew: valid_attributes}, session: valid_session
-        }.to change(Revirew, :count).by(1)
+          post :create, params: {review: valid_attributes}, session: valid_session
+        }.to change(review, :count).by(1)
       end
 
-      it "redirects to the created revirew" do
-        post :create, params: {revirew: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Revirew.last)
+      it "redirects to the created review" do
+        post :create, params: {review: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(review.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {revirew: invalid_attributes}, session: valid_session
+        post :create, params: {review: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
@@ -100,41 +100,41 @@ RSpec.describe RevirewsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested revirew" do
-        revirew = Revirew.create! valid_attributes
-        put :update, params: {id: revirew.to_param, revirew: new_attributes}, session: valid_session
-        revirew.reload
+      it "updates the requested review" do
+        review = review.create! valid_attributes
+        put :update, params: {id: review.to_param, review: new_attributes}, session: valid_session
+        review.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the revirew" do
-        revirew = Revirew.create! valid_attributes
-        put :update, params: {id: revirew.to_param, revirew: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(revirew)
+      it "redirects to the review" do
+        review = review.create! valid_attributes
+        put :update, params: {id: review.to_param, review: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(review)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        revirew = Revirew.create! valid_attributes
-        put :update, params: {id: revirew.to_param, revirew: invalid_attributes}, session: valid_session
+        review = review.create! valid_attributes
+        put :update, params: {id: review.to_param, review: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested revirew" do
-      revirew = Revirew.create! valid_attributes
+    it "destroys the requested review" do
+      review = review.create! valid_attributes
       expect {
-        delete :destroy, params: {id: revirew.to_param}, session: valid_session
-      }.to change(Revirew, :count).by(-1)
+        delete :destroy, params: {id: review.to_param}, session: valid_session
+      }.to change(review, :count).by(-1)
     end
 
-    it "redirects to the revirews list" do
-      revirew = Revirew.create! valid_attributes
-      delete :destroy, params: {id: revirew.to_param}, session: valid_session
-      expect(response).to redirect_to(revirews_url)
+    it "redirects to the reviews list" do
+      review = review.create! valid_attributes
+      delete :destroy, params: {id: review.to_param}, session: valid_session
+      expect(response).to redirect_to(reviews_url)
     end
   end
 

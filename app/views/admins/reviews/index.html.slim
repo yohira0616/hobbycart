@@ -1,4 +1,4 @@
-h1 Listing revirews
+h1 Listing reviews
 
 table
   thead
@@ -8,12 +8,12 @@ table
       th
 
   tbody
-    - @revirews.each do |revirew|
+    - @reviews.each do |review|
       tr
-        td = link_to 'Show', revirew
-        td = link_to 'Edit', edit_revirew_path(revirew)
-        td = link_to 'Destroy', revirew, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', review
+        td = link_to 'Edit', edit_review_path(review)
+        td = link_to 'Destroy', review, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Revirew', new_revirew_path
+= link_to 'New review', new_review_path

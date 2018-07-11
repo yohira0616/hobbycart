@@ -1,1 +1,1 @@
-json.array! @revirews, partial: 'revirews/revirew', as: :revirew
+json.array! @reviews, partial: 'reviews/review', as: :review
