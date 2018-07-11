@@ -12,13 +12,7 @@ Rails.application.routes.draw do
 
   resources :items, only: %i(index show)
 
-  namespace :users do
-    get 'signup' => "new"
-    post 'signup' => "create"
-    get 'leave' => "leave"
-    delete 'destroy' => "destroy"
-  end
-
+  resources :users, only: :destroy
 
   namespace :admins do
     get 'dashboard' => 'dashboard#show'
