@@ -11,5 +11,4 @@
       = f.search_field :email_cont, class: 'form-control'
     = f.submit '検索', class: 'btn btn-primary'
 
-
-  = render 'users'
+  = render 'users', users: @users

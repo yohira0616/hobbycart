@@ -11,9 +11,12 @@ class CreateUser < ActiveRecord::Migration[5.2]
       t.string :uid
       t.string :provider
 
+      # 外部情報
       t.string :screen_name, null: false
       t.string :name
       t.text :description
+
+      t.timestamps
     end
   end
 end
