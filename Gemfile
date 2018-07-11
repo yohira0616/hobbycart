@@ -36,6 +36,9 @@ gem 'gon'
 gem 'gretel'
 gem 'kaminari'
 
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
+
 # Use Capistrano for deployment
 
 # Reduces boot times through caching; required in config/boot.rb

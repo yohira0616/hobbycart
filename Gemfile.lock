@@ -94,6 +94,19 @@ GEM
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
+    elasticsearch (5.0.5)
+      elasticsearch-api (= 5.0.5)
+      elasticsearch-transport (= 5.0.5)
+    elasticsearch-api (5.0.5)
+      multi_json
+    elasticsearch-model (5.1.0)
+      activesupport (> 3)
+      elasticsearch (~> 5)
+      hashie
+    elasticsearch-rails (5.1.0)
+    elasticsearch-transport (5.0.5)
+      faraday
+      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -112,6 +125,7 @@ GEM
       request_store (>= 1.0)
     gretel (3.0.9)
       rails (>= 3.1.0)
+    hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -332,6 +346,8 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   dotenv-rails
+  elasticsearch-model
+  elasticsearch-rails
   factory_bot_rails
   gon
   gretel
