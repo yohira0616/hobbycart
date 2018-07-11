@@ -1,0 +1,18 @@
+table.table
+  thead
+    tr
+      th scope="col" id
+      th scope="col" 内容
+      th scope="col" アカウント
+      th scope="col" 商品
+      th scope="col" 作成日時
+      th scope="col" 更新日時
+  tbody
+    - comments.each do |comments|
+      tr
+        td = comment.id
+        td = comment.body
+        td = comment.user.screen_name
+        td = comment.item.name
+        td = comment.created_at
+        td = comment.updated_at

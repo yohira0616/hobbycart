@@ -1,6 +1,52 @@
 crumb :root do
-  link "Home", root_path
+  link "トップ", root_path
 end
+
+# 管理画面
+
+crumb :users do
+  link "ユーザー", admins_users_path
+  parent :root
+end
+
+crumb :user do |user|
+  link user.screen_name,admins_user_path(user)
+  parent :users
+end
+
+crumb :items do
+  link "商品", admins_items_path
+  parent :root
+end
+
+crumb :item do |item|
+  link item.name, admins_item_path(item)
+  parent :items
+end
+
+crumb :comments do
+  link "コメント",admins_comments_path
+  parent :root
+end
+
+crumb :comment do |comment|
+  link comment.id,admins_comment_path(comment)
+  parent :comments
+end
+
+crumb :reviews do
+
+end
+
+crumb :item_purchase_logs do
+
+end
+
+crumb :reactions do
+
+end
+
+# フロント TODO
 
 # crumb :projects do
 #   link "Projects", projects_path

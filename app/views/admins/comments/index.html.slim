@@ -1,19 +1,9 @@
-h1 Listing comments
+- breadcrumb :comments
+.container
+  h1 コメント一覧
+  == breadcrumbs
 
-table
-  thead
-    tr
-      th
-      th
-      th
+  = render 'search'
+  = render 'comments', comments: @comments
 
-  tbody
-    - @comments.each do |comment|
-      tr
-        td = link_to 'Show', comment
-        td = link_to 'Edit', edit_comment_path(comment)
-        td = link_to 'Destroy', comment, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Comment', new_comment_path
+  = paginate @comments
