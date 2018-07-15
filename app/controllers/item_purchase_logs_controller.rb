@@ -1,4 +1,5 @@
 class ItemPurchaseLogsController < ApplicationController
+  before_action :require_login
 
   def index
 
@@ -6,7 +7,8 @@ class ItemPurchaseLogsController < ApplicationController
 
   # 購入
   def create
-    # TODO
+    binding.pry
+
     redirect_to root_path
   end
 

@@ -11,14 +11,16 @@
       p.card-text この商品へのコメントはまだありません
     - else
       - item.comments.each do |comment|
-        p.card-text = comment.body
+        = render 'comment_card', comment: comment
 
-    p.card-text 新しくコメントする
-    // comment_form
     .comment-form data-item-id="#{item.id}"
-
     .good-button data-item-id="#{item.id}"
 
-    a.btn.btn-primary href="#"
-      i.fas.fa-shopping-cart
-      | 購入する
+    - if logged_in?
+      = button_to user_item_purchase_logs_path(user_id: current_user.id), method: :post, class: 'btn btn-primary' do
+        i.fas.fa-shopping-cart
+        |  購入する
+    - else
+      = link_to login_path, class: 'btn btn-primary' do
+        i.fas.fa-shopping-cart
+        |  購入する
