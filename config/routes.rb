@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "oauths#callback"
   get "/auth/:provider" => "oauths#oauth", as: :auth_at_provider
 
-  resources :items, only: %i(index show)
+  resources :items, only: %i(index show) do
+    resources :item_purchase_logs, only: %i(create)
+  end
   resources :users, only: :destroy do
     resources :item_purchase_logs, only: %i(index create)
     resources :reactions, only: :index

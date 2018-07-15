@@ -17,7 +17,7 @@
     .good-button data-item-id="#{item.id}"
 
     - if logged_in?
-      = button_to user_item_purchase_logs_path(user_id: current_user.id), method: :post, class: 'btn btn-primary' do
+      = button_to item_item_purchase_logs_path(item_id: item.id), method: :post, class: 'btn btn-primary' do
         i.fas.fa-shopping-cart
         |  購入する
     - else
