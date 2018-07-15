@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   //   template: '<CommentForm />',
   //   components: {CommentForm}
   // })
+  const commentFormDom = document.querySelectorAll('.comment-form')
+  commentFormDom.forEach((elem)=>{
+    new Vue({
+      el: elem,
+      template: '<CommentForm />',
+      components: {CommentForm}
+    })
+  })
+
   new Vue({
     el: '#hello-world',
     template: '<HelloWorld />',
