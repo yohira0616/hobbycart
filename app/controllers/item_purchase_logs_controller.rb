@@ -7,10 +7,9 @@ class ItemPurchaseLogsController < ApplicationController
 
   # 購入
   def create
-    binding.pry
-    ItemPurchaseLog.purchase!(current_user, Item.find(params[:item_id]))
+    ItemPurchaseLog.purchase!(current_user, Item.publish.find(params[:item_id]))
     flash[:success] = "商品を購入しました"
-    redirect_to root_path
+    redirect_to user_item_purchase_logs_path(user_id: current_user.id)
   end
 
   private
