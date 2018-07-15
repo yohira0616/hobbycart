@@ -1,3 +1,5 @@
 .container
   h1 購入ログ
   = render 'item_purchase_logs', item_purchase_logs: @item_purchase_logs
+
+  = paginate @item_purchase_logs

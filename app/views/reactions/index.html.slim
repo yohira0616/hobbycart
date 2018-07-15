@@ -1,1 +1,9 @@
-h1 Reactions#index
+.container
+  h1 あなたがいいねした商品
+
+  - @items.each do |item|
+    = render 'item_card', item: item
+
+  = paginate @items
+
+= javascript_pack_tag 'items/index'
