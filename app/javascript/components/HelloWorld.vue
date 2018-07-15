@@ -1,10 +1,10 @@
 <template>
-  <div>This is Comment Form</div>
+  <div>Hello,React-Vue!</div>
 </template>
 
 <script>
   export default {
-    name: "CommentForm"
+    name: "HelloWorld"
   }
 </script>
 

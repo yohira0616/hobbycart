@@ -1,5 +1,6 @@
 .container
   = render 'items/search_form'
+  #hello-world
   - @items.each do |item|
     = render 'item_card', item: item
 
