@@ -35,12 +35,13 @@
         const url = `/api/items/${this.itemId}/comments`
         axios.post(url, params)
           .then((res) => {
-            console.log('commennt create!')
+            this.body = ''
+            console.log('done')
+
           })
           .catch((err) => {
             console.log(err)
           })
-        console.log('submit')
       },
       onRemoveButtonClick(e) {
         console.log('remove')

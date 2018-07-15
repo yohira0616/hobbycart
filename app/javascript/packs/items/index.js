@@ -15,14 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // const GoodButtonForm = document.querySelectorAll('.good-button')
-  // GoodButtonForm.forEach((elem)=>{
-  //   new Vue({
-  //     el: elem,
-  //     template:'<GoodButton />',
-  //     components: {GoodButton}
-  //   })
-  // })
+  const GoodButtonForm = document.querySelectorAll('.good-button')
+  GoodButtonForm.forEach((elem)=>{
+    const itemId = Number(elem.dataset.itemId)
+    new Vue({
+      el: elem,
+      template:`<GoodButton item-id="${itemId}" />`,
+      components: {GoodButton}
+    })
+  })
 
   new Vue({
     el: '#hello-world',

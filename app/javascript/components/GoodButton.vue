@@ -19,7 +19,6 @@
     name: "GoodButton",
     props: {
       itemId: {
-        type: Number,
         required: true
       }
     },
