@@ -1,0 +1,17 @@
+table.table
+  thead
+    tr
+      th scope="col" 購入番号
+      th scope="col" 商品名
+      th scope="col" 価格
+      th scope="col" 購入日付
+      th scope="col"
+  tbody
+    - item_purchase_logs.each do |item_purchase_log|
+      tr
+        td = item_purchase_log.id
+        td = item_purchase_log.name
+        td = item_purchase_log.price
+        td = item_purchase_log.created_at
+        td
+          = link_to '商品ページへ',item_path(item_purchase_log.item_id)
