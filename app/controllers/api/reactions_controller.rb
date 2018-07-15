@@ -3,13 +3,13 @@ module Api
     before_action :require_login
 
     def create
-      item = Item.find!(create_params[:item_id])
+      item = Item.publish.find!(create_params[:item_id])
       Reaction.good_to_item!(item, current_user)
       render json: {}, status: 200
     end
 
     def destroy
-      item = Item.find!(create_params[:item_id])
+      item = Item.publish.find!(create_params[:item_id])
       Reaction.revoke_good_to_item!(item, current_user)
       render json: {}, status: 200
     end
