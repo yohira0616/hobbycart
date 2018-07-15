@@ -1,11 +1,11 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand href="#"  HobbyCart
+  = link_to 'HobbyCart', root_path, class: 'navbar-brand'
   button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        a.nav-link href="/items/"
+        = link_to items_path,class:'nav-link' do
           | 商品検索
           span.sr-only (current)
       li.nav-item
@@ -14,16 +14,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link href="#"  購入した商品
       li.nav-item
         = link_to '設定', settings_path, class: 'nav-link'
-      li.nav-item.dropdown
-        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-          | Dropdown
-        .dropdown-menu aria-labelledby="navbarDropdown"
-          a.dropdown-item href="#"  Action
-          a.dropdown-item href="#"  Another action
-          .dropdown-divider
-          a.dropdown-item href="#"  Something else here
-      li.nav-item
-        a.nav-link.disabled href="#"  Disabled
     form.form-inline.my-2.my-lg-0
       - if logged_in?
         = link_to 'ログアウト', logout_path, class: 'nav-link'
