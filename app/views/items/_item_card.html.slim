@@ -11,7 +11,7 @@
       p.card-text この商品へのコメントはまだありません
     - else
       - item.comments.each do |comment|
-        = render 'comment_card', comment: comment
+        = render 'items/comment_card', comment: comment
 
     .comment-form data-item-id="#{item.id}"
     .good-button data-item-id="#{item.id}"

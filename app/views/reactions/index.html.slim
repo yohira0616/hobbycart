@@ -2,7 +2,7 @@
   h1 あなたがいいねした商品
 
   - @items.each do |item|
-    = render 'item_card', item: item
+    = render 'items/item_card', item: item
 
   = paginate @items
 

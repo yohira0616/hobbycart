@@ -34,7 +34,7 @@
           item_id: this.itemId
         }
         const url = `/api/items/${this.itemId}/reactions`
-        axios.post('/api/reactions', params)
+        axios.post(url, params)
           .then((res) => {
 
             console.log('Good!')
