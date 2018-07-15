@@ -5,7 +5,12 @@ class ItemPurchaseLog < ApplicationRecord
 
   class << self
     def purchase!(user, item)
-      # TODO
+      create!(
+        user: user,
+        item: item,
+        name: item.name,
+        price: item.price
+      )
     end
   end
 end
