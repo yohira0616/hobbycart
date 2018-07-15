@@ -1,5 +1,5 @@
 <template>
-  <div class="alert alert-warning" v-bind:class="getNotificationClassName()" role="alert">{{body}}</div>
+  <div class="alert" v-bind:class="getNotificationClassName()" role="alert">{{body}}</div>
 
 </template>
 

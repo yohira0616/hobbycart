@@ -12,10 +12,4 @@ class ItemPurchaseLogsController < ApplicationController
     redirect_to user_item_purchase_logs_path(user_id: current_user.id)
   end
 
-  private
-
-  def create_params
-    # TODO
-  end
-
 end
