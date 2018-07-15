@@ -4,14 +4,13 @@ import CommentForm from '../../components/CommentForm'
 import GoodButton from '../../components/GoodButton'
 import HelloWorld from '../../components/HelloWorld'
 
-console.log('items/index hello!')
-
 document.addEventListener('DOMContentLoaded', () => {
   const commentFormDom = document.querySelectorAll('.comment-form')
   commentFormDom.forEach((elem)=>{
+    const itemId = Number(elem.dataset.itemId)
     new Vue({
       el: elem,
-      template: '<CommentForm />',
+      template: `<CommentForm item-id="${itemId}" />`,
       components: {CommentForm}
     })
   })

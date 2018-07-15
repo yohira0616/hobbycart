@@ -3,15 +3,21 @@
   .card-body
     h5.card-title Special title treatment
     p.card-text = item.description
+    p.card-text = "#{item.price} 円"
     p.card-text この商品を買った人のレビュー
     // review
     p.card-text この商品へのコメント
-    // comment
+    - if item.comments.blank?
+      p.card-text この商品へのコメントはまだありません
+    - else
+      - item.comments.each do |comment|
+        p.card-text = comment.body
+
     p.card-text 新しくコメントする
     // comment_form
-    .comment-form
+    .comment-form data-item-id="#{item.id}"
 
-    .good-button item-id="#{item.id}"
+    .good-button data-item-id="#{item.id}"
 
     a.btn.btn-primary href="#"
       i.fas.fa-shopping-cart

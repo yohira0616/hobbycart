@@ -3,9 +3,9 @@ module Api
     before_action :require_login
 
     def create
-      binding.pry
       Comment.create!(
         user: current_user,
+        item: Item.find(params[:item_id]),
         body: create_params[:body]
       )
       render json: {}, status: 200

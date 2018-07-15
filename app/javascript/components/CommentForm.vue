@@ -5,6 +5,7 @@
       <textarea class="form-control" rows="3" placeholder="この商品に対してコメントする..." v-model="body" required></textarea>
     </div>
     <button type="submit" class="btn btn-success" @click="onSubmit">コメントする</button>
+    <button class="btn btn-danger" @click="onRemoveButtonClick">自分のコメントを削除する</button>
   </form>
 </template>
 
@@ -13,8 +14,10 @@
 
   export default {
     name: "CommentForm",
-    props:{
-
+    props: {
+      itemId: {
+        required: true
+      }
     },
     data: function () {
       return {
@@ -25,20 +28,23 @@
       onSubmit(e) {
         e.preventDefault()
         const params = {
-          comment:{
+          comment: {
             body: this.body
           }
         }
-        axios.post('/api/comments',params)
-          .then((res)=>{
+        const url = `/api/items/${this.itemId}/comments`
+        axios.post(url, params)
+          .then((res) => {
             console.log('commennt create!')
           })
-          .catch((err)=>{
+          .catch((err) => {
             console.log(err)
           })
         console.log('submit')
+      },
+      onRemoveButtonClick(e) {
+        console.log('remove')
       }
-
     }
   }
 </script>
