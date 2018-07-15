@@ -12,6 +12,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link href="#"  いいねした商品
       li.nav-item
         a.nav-link href="#"  購入した商品
+      li.nav-item
+        = link_to '設定', settings_path, class: 'nav-link'
       li.nav-item.dropdown
         a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
           | Dropdown
@@ -24,6 +26,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link.disabled href="#"  Disabled
     form.form-inline.my-2.my-lg-0
       - if logged_in?
-        = link_to 'ログアウト', logout_path
+        = link_to 'ログアウト', logout_path, class: 'nav-link'
       - else
-        = link_to 'ログイン', login_path
+        = link_to 'ログイン', login_path, class: 'nav-link'
