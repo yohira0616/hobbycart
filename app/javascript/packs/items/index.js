@@ -7,17 +7,21 @@ import HelloWorld from '../../components/HelloWorld'
 console.log('items/index hello!')
 
 document.addEventListener('DOMContentLoaded', () => {
-  // new Vue({
-  //   el: '.comment-form',
-  //   template: '<CommentForm />',
-  //   components: {CommentForm}
-  // })
   const commentFormDom = document.querySelectorAll('.comment-form')
   commentFormDom.forEach((elem)=>{
     new Vue({
       el: elem,
       template: '<CommentForm />',
       components: {CommentForm}
+    })
+  })
+
+  const GoodButtonForm = document.querySelectorAll('.good-button')
+  GoodButtonForm.forEach((elem)=>{
+    new Vue({
+      el: elem,
+      template:'<GoodButton />',
+      components: {GoodButton}
     })
   })
 
