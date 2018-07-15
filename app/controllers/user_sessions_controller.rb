@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   # セッション破棄
   def destroy
     logout
-    flash[:primary]="ログアウトしました"
+    flash[:primary] = "ログアウトしました"
     redirect_to root_path
   end
 
