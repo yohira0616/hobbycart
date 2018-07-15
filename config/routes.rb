@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   get "/auth/:provider" => "oauths#oauth", as: :auth_at_provider
 
   resources :items, only: %i(index show)
-  resources :users, only: :destroy
-  resources :item_purchase_logs, only: %i(index create)
-  resources :reactions, only: :index
+  resources :users, only: :destroy do
+    resources :item_purchase_logs, only: %i(index create)
+    resources :reactions, only: :index
+  end
 
   get 'settings' => 'settings#show'
 

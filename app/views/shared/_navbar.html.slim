@@ -8,12 +8,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         = link_to items_path, class: 'nav-link' do
           | 商品検索
           span.sr-only (current)
-      li.nav-item
-        = link_to 'いいねした商品', reactions_path, class: 'nav-link'
-      li.nav-item
-        = link_to '購入した商品', item_purchase_logs_path, class: 'nav-link'
-      li.nav-item
-        = link_to '設定', settings_path, class: 'nav-link'
+      - if logged_in?
+        li.nav-item
+          = link_to 'いいねした商品', user_reactions_path(user_id: current_user.id), class: 'nav-link'
+        li.nav-item
+          = link_to '購入した商品', user_item_purchase_logs_path(user_id: current_user.id), class: 'nav-link'
+        li.nav-item
+          = link_to '設定', settings_path, class: 'nav-link'
     form.form-inline.my-2.my-lg-0
       - if logged_in?
         = link_to 'ログアウト', logout_path, class: 'nav-link'
