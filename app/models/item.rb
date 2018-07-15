@@ -9,5 +9,13 @@ class Item < ApplicationRecord
     only_integer: true, greater_than_or_equal_to: 0
   }
 
+  scope :favorited, ->(user) {
+    # TODO
+  }
+
+  scope :purchased, ->(user) {
+    # TODO
+  }
+
   enum status: [:publish, :draft]
 end
