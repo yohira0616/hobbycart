@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :require_login
 
   def index
     @q = Item.ransack(params[:q])
