@@ -25,9 +25,11 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :comments, only: %i(create destroy)
-    resources :reactions, only: %i(create destroy)
-    resources :reviews, only: %i(create destroy)
+    resources :items, only: [], shallow: true do
+      resources :comments, only: %i(create destroy)
+      resources :reviews, only: %i(create destroy)
+      resources :reactions, only: %i(create destroy)
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

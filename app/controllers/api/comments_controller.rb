@@ -3,6 +3,7 @@ module Api
     before_action :require_login
 
     def create
+      binding.pry
       Comment.create!(
         user: current_user,
         body: create_params[:body]
