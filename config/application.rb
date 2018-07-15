@@ -19,9 +19,10 @@ module Hobbycart
     config.generators do |g|
       g.helper false
       g.template_engine :slim
-      g.test_framework  :rspec, fixture: false
-      g.stylesheets     false
-      g.javascripts     false
+      g.test_framework :rspec
+      g.factory_bot true
+      g.stylesheets false
+      g.javascripts false
     end
   end
 end
