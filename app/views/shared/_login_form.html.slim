@@ -1,0 +1,9 @@
+.card
+  .card-body
+    h5.card-title ログイン
+    p.card-text Twitterアカウントを用いてログインすることができます
+    = link_to '/auth/twitter',class: 'btn btn-primary' do
+      i.fab.fa-twitter
+      | Twitterで登録/ログイン
+    p
+      small ※ログイン後、ユーザー画面からいつでもアカウントを削除することができます。
