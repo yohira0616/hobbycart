@@ -5,13 +5,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        = link_to items_path,class:'nav-link' do
+        = link_to items_path, class: 'nav-link' do
           | 商品検索
           span.sr-only (current)
       li.nav-item
-        a.nav-link href="#"  いいねした商品
+        = link_to 'いいねした商品', reactions_path, class: 'nav-link'
       li.nav-item
-        a.nav-link href="#"  購入した商品
+        = link_to '購入した商品', item_purchase_logs_path, class: 'nav-link'
       li.nav-item
         = link_to '設定', settings_path, class: 'nav-link'
     form.form-inline.my-2.my-lg-0

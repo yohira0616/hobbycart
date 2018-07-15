@@ -1,5 +1,9 @@
 class ItemPurchaseLogsController < ApplicationController
 
+  def index
+
+  end
+
   # 購入
   def create
     # TODO

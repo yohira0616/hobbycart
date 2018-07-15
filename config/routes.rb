@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :items, only: %i(index show)
   resources :users, only: :destroy
-  resources :item_purchase_logs, only: :create
+  resources :item_purchase_logs, only: %i(index create)
+  resources :reactions, only: :index
 
   get 'settings' => 'settings#show'
 
