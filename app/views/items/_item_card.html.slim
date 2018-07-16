@@ -2,9 +2,16 @@
   .card-header = item.name
   .card-body
     // 左半分に商品画像、右半分に説明と価格
-    h5.card-title Special title treatment
-    p.card-text = item.description
-    p.card-text = "#{item.price} 円"
+    .row
+      .col-6
+        - if item.thumbnail.attached?
+          = image_tag url_for(item.thumbnail), class: 'img-thumbnail'
+        - else
+          = image_tag '/avatar.png', class: 'img-thumbnail'
+
+      .col-6
+        p.card-text = item.description
+        p.card-text = "価格: #{item.price} 円"
     p.card-text この商品へのコメント
     - if item.comments.blank?
       p.card-text この商品へのコメントはまだありません
