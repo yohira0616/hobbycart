@@ -1,0 +1,8 @@
+- if logged_in?
+  = button_to item_item_purchase_logs_path(item_id: item.id), method: :post, class: 'btn btn-primary btn-lg btn-block' do
+    i.fas.fa-shopping-cart
+    |  購入する
+- else
+  = link_to login_path, class: 'btn btn-primary btn-lg btn-block' do
+    i.fas.fa-shopping-cart
+    |  購入する

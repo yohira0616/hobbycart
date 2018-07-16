@@ -10,8 +10,13 @@
           = image_tag '/avatar.png', class: 'img-thumbnail'
 
       .col-6
-        p.card-text = item.description
-        p.card-text = "価格: #{item.price} 円"
+        .jumbotron
+          p.card-text = item.description
+        .good-button data-item-id="#{item.id}"
+        h5.text-center.text-danger = "価格: #{item.price} 円"
+        = render 'items/purchase_button', item: item
+
+
     p.card-text この商品へのコメント
     - if item.comments.blank?
       p.card-text この商品へのコメントはまだありません
@@ -20,13 +25,4 @@
         = render 'items/comment_card', comment: comment
 
     .comment-form data-item-id="#{item.id}"
-    .good-button data-item-id="#{item.id}"
 
-    - if logged_in?
-      = button_to item_item_purchase_logs_path(item_id: item.id), method: :post, class: 'btn btn-primary' do
-        i.fas.fa-shopping-cart
-        |  購入する
-    - else
-      = link_to login_path, class: 'btn btn-primary' do
-        i.fas.fa-shopping-cart
-        |  購入する
