@@ -12,6 +12,6 @@ table.table
         td = item_purchase_log.id
         td = item_purchase_log.name
         td = item_purchase_log.price
-        td = item_purchase_log.created_at
+        td = datetime_format(item_purchase_log.created_at)
         td
           = link_to '商品ページへ',item_path(item_purchase_log.item_id)
