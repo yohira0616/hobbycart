@@ -20,5 +20,5 @@ class Item < ApplicationRecord
     # TODO
   }
 
-  enum status: [:publish, :draft]
+  enum status: %i(puclish draft)
 end
