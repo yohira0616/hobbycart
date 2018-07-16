@@ -2,6 +2,7 @@
   <button class="btn btn-light" @click="onClick">
     <i class="far fa-thumbs-up"></i>
     いいね！
+    <span v-if="isRevokeMode">を取り消す</span>
   </button>
 
 </template>
@@ -20,11 +21,14 @@
     props: {
       itemId: {
         required: true
+      },
+      reactionId: {
+        required: false
       }
     },
     data: function () {
       return {
-        mode: buttonType.NORMAL,
+        mode: this.reactionId ? buttonType.REVOKE : buttonType.NORMAL,
         enabled: true
       }
     },
@@ -33,16 +37,34 @@
         const params = {
           item_id: this.itemId
         }
-        const url = `/api/items/${this.itemId}/reactions`
-        axios.post(url, params)
-          .then((res) => {
+        if (this.mode === buttonType.NORMAL) {
+          const url = `/api/items/${this.itemId}/reactions`
+          axios.post(url, params)
+            .then((res) => {
 
-            console.log('Good!')
-          })
-          .catch((err) => {
-            console.error(err)
-          })
+              console.log('Good!')
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+        } else if (this.mode === buttonType.REVOKE) {
+          const url = `/api/reactions/${this.reactionId}`
+          axios.delete(url)
+            .then((res) => {
+
+              console.log('revoke!')
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }
       }
+    },
+    computed: {
+      isRevokeMode(){
+        return this.mode === buttonType.REVOKE
+      }
+
     }
   }
 </script>

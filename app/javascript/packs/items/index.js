@@ -18,9 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const GoodButtonForm = document.querySelectorAll('.good-button')
   GoodButtonForm.forEach((elem)=>{
     const itemId = Number(elem.dataset.itemId)
+    const reactionId = elem.dataset.reactionId
     new Vue({
       el: elem,
-      template:`<GoodButton item-id="${itemId}" />`,
+      template:`<GoodButton item-id="${itemId}" reaction-id="${reactionId}" />`,
       components: {GoodButton}
     })
   })

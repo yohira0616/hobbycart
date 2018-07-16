@@ -24,5 +24,11 @@ class Item < ApplicationRecord
     Reaction.where(target_id: id).count
   end
 
+  # これItemにあっていいか微妙
+  def fetch_reaction_id(user)
+    reaction = Reaction.find_by(user: user, target_id: id, target_type: 'item', stamp_code: '1')
+    reaction.present? ? reaction.id : nil
+  end
+
   enum status: [:publish, :draft]
 end

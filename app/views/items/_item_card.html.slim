@@ -10,7 +10,10 @@
       .col-sm-6
         .jumbotron
           p.card-text = simple_format(h(item.description))
-        .good-button data-item-id="#{item.id}"
+        - if logged_in?
+          .good-button data-item-id="#{item.id}" data-reaction-id="#{item.fetch_reaction_id(current_user)}"
+        - else
+          .good-button data-item-id="#{item.id}"
         - if item.good_count.positive?
           small = "#{item.good_count}人がいいね！と言っています"
         h5.text-center.text-danger = "価格: #{item.price} 円"

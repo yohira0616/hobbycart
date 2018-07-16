@@ -7,6 +7,11 @@ class Reaction < ApplicationRecord
   validates :stamp_code, presence: true
 
   class << self
+    def already_good?(item, user)
+      reaction = find_by(user: user, target_id: item.id, target_type: 'item', stamp_code: '1')
+      reaction.present?
+    end
+
     def good_to_item!(item, user)
       create!(user: user, target_id: item.id, target_type: 'item', stamp_code: '1')
     end
