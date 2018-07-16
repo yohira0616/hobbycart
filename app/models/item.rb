@@ -20,5 +20,9 @@ class Item < ApplicationRecord
     # TODO
   }
 
+  def good_count
+    Reaction.where(target_id: id).count
+  end
+
   enum status: [:publish, :draft]
 end
