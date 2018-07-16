@@ -1,7 +1,7 @@
 # 商品マスタ
 class Item < ApplicationRecord
   include Elasticsearch::Model
-  include Elasticsearch::Callback
+  include Elasticsearch::Model::Callbacks
 
   has_one_attached :thumbnail
   has_many :comments, dependent: :destroy
