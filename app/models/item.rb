@@ -12,7 +12,7 @@ class Item < ApplicationRecord
 
   scope :favorited, ->(user) {
     reactions = Reaction.where(user: user)
-    reaction_target_ids = reactions.map {|reaction| reaction.target_id}.uniq
+    reaction_target_ids = reactions.map(&:target_id).uniq
     where(id: reaction_target_ids)
   }
 
@@ -20,5 +20,5 @@ class Item < ApplicationRecord
     # TODO
   }
 
-  enum status: %i(puclish draft)
+  enum status: [:publish, :draft]
 end
