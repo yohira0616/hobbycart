@@ -11,7 +11,7 @@
 
       .col-6
         .jumbotron
-          p.card-text = item.description
+          p.card-text = simple_format(h(item.description))
         .good-button data-item-id="#{item.id}"
         h5.text-center.text-danger = "価格: #{item.price} 円"
         = render 'items/purchase_button', item: item
