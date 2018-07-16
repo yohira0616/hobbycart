@@ -1,1 +1,14 @@
-p.card-text = comment.body
+.card
+  .row
+    .col-2
+      - if comment.user.avatar.attached?
+        = image_tag url_for(comment.user.avatar), class: 'img-thumbnail'
+      - else
+        = image_tag '/avatar.png', class: 'img-thumbnail'
+    .col
+      .card-text = comment.body
+  .row
+    .col-2
+      .text-center = comment.user.screen_name
+    .col
+      .card-text.text-right = "投稿日時: #{datetime_format(comment.created_at)}"
