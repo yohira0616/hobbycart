@@ -23,43 +23,52 @@
         required: true
       },
       reactionId: {
+        default: null,
         required: false
       }
     },
     data: function () {
       return {
         mode: this.reactionId ? buttonType.REVOKE : buttonType.NORMAL,
+        id: this.reactionId,
         enabled: true
       }
     },
     methods: {
       onClick() {
+        if (this.mode === buttonType.NORMAL) {
+          this.doGood()
+        } else if (this.mode === buttonType.REVOKE) {
+          this.revokeGood()
+        }
+      },
+      doGood() {
         const params = {
           item_id: this.itemId
         }
-        if (this.mode === buttonType.NORMAL) {
-          const url = `/api/items/${this.itemId}/reactions`
-          axios.post(url, params)
-            .then((res) => {
-              this.mode = buttonType.REVOKE
-            })
-            .catch((err) => {
-              console.error(err)
-            })
-        } else if (this.mode === buttonType.REVOKE) {
-          const url = `/api/reactions/${this.reactionId}`
-          axios.delete(url)
-            .then((res) => {
-              this.mode = buttonType.NORMAL
-            })
-            .catch((err) => {
-              console.log(err)
-            })
-        }
+        const url = `/api/items/${this.itemId}/reactions`
+        axios.post(url, params)
+          .then((res) => {
+            this.mode = buttonType.REVOKE
+            this.id = res.data.reactionId
+          })
+          .catch((err) => {
+            console.error(err)
+          })
+      },
+      revokeGood() {
+        const url = `/api/reactions/${this.id}`
+        axios.delete(url)
+          .then((res) => {
+            this.mode = buttonType.NORMAL
+          })
+          .catch((err) => {
+            console.log(err)
+          })
       }
     },
     computed: {
-      isRevokeMode(){
+      isRevokeMode() {
         return this.mode === buttonType.REVOKE
       }
 

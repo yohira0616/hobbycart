@@ -10,8 +10,8 @@ module Api
           error: "すでにいいねされています"
         }, status: 400
       end
-      Reaction.good_to_item!(item, current_user)
-      render json: {}, status: 200
+      result = Reaction.good_to_item!(item, current_user)
+      render json: {reactionId: result.id}, status: 200
     end
 
     def destroy
