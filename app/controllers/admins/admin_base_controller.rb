@@ -2,7 +2,6 @@
 module Admins
   class AdminBaseController < ::ActionController::Base
     include ::AuthenticationHandler
-
     layout 'admin/application'
 
   end

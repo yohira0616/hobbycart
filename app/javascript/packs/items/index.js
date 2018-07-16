@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  new Vue({
-    el: '#hello-world',
-    template: '<HelloWorld />',
-    components: {HelloWorld}
-  })
+  // new Vue({
+  //   el: '#hello-world',
+  //   template: '<HelloWorld />',
+  //   components: {HelloWorld}
+  // })
 
 
   console.log('render done!')
