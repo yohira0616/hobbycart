@@ -41,8 +41,7 @@
           const url = `/api/items/${this.itemId}/reactions`
           axios.post(url, params)
             .then((res) => {
-
-              console.log('Good!')
+              this.mode = buttonType.REVOKE
             })
             .catch((err) => {
               console.error(err)
@@ -51,8 +50,7 @@
           const url = `/api/reactions/${this.reactionId}`
           axios.delete(url)
             .then((res) => {
-
-              console.log('revoke!')
+              this.mode = buttonType.NORMAL
             })
             .catch((err) => {
               console.log(err)
