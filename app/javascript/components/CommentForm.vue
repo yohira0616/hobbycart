@@ -1,7 +1,6 @@
 <template>
-  <form class="mb-1">
+  <form class="mb-1 mt-2">
     <div class="form-group">
-      <p>コメントする</p>
       <textarea class="form-control" rows="3" placeholder="この商品に対してコメントする..." v-model="body" required></textarea>
     </div>
     <button type="submit" class="btn btn-success" @click="onSubmit">コメントする</button>
@@ -36,8 +35,6 @@
         axios.post(url, params)
           .then((res) => {
             this.body = ''
-            console.log('done')
-
           })
           .catch((err) => {
             console.log(err)
