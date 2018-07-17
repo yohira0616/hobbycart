@@ -4,7 +4,6 @@
       <textarea class="form-control" rows="3" placeholder="この商品に対してコメントする..." v-model="body" required></textarea>
     </div>
     <button type="submit" class="btn btn-success" @click="onSubmit">コメントする</button>
-    <button class="btn btn-danger" @click="onRemoveButtonClick">自分のコメントを削除する</button>
   </form>
 </template>
 
@@ -39,9 +38,6 @@
           .catch((err) => {
             console.log(err)
           })
-      },
-      onRemoveButtonClick(e) {
-        console.log('remove')
       }
     }
   }
