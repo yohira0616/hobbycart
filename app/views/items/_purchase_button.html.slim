@@ -1,5 +1,5 @@
 - if logged_in?
-  = button_to item_item_purchase_logs_path(item_id: item.id), method: :post, class: 'btn btn-primary btn-lg btn-block' do
+  = button_to item_item_purchase_logs_path(item_id: item.id), method: :post, class: 'btn btn-primary btn-lg btn-block', data: {disabled_with: '処理中...'} do
     i.fas.fa-shopping-cart
     |  購入する
 - else
