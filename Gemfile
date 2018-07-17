@@ -37,6 +37,9 @@ gem 'gretel'
 gem 'kaminari'
 gem 'redis-rails'
 
+# gcp
+gem "google-cloud-storage", "~> 1.3", require: false
+
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
