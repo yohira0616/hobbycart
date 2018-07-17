@@ -1,0 +1,15 @@
+.car
+  .card-body
+    h1.card-title このサイトについて
+    h3.card-subtitle.mb-2 使い方
+    p.card-text ・このサイトは、簡単なECサイトを模倣して作ったポートフォリオサイトです。
+    p.card-text ・簡単な認証・商品検索・コメント・購入などをRuby on Rails + Vueで実装しています。
+    p.card-text ・利用には一部Twitterアカウントが必要となる箇所があります。登録後も設定画面からいつでも退会することができます。
+    p.card-text ・ポートフォリオサイトですので、管理画面もすべて解放しています。アカウントを登録して自由に触ることができます。
+    h3.card-subtitle.mb-2 登録したアカウントの扱いについて
+    p.card-text ・登録されたアカウントは営利目的に使用することはありません。
+    p.card-text ・開発中の都合によりデータを予告なく変更・削除することがあります。重要な個人情報を決して保存しないでください。
+    h3.card-subtitle.mb-2 免責
+    p.card-text ・このサイトを利用することによって発生する損害について、一切の責任を負いかねます。
+    p = link_to '商品一覧へ', items_path, class: 'btn btn-dark'
+    p = link_to '管理画面へ', admins_dashboard_path, class: 'btn btn-dark'
