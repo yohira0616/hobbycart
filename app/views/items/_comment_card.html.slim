@@ -10,4 +10,6 @@
       .card-body.card-text = simple_format(h(comment.body))
   .row
     .col-sm-12
-      .card-body.card-text.text-right = "投稿日時: #{datetime_format(comment.created_at)}"
+      .card-body.card-text.text-right
+        i.fas.fa-trash.mr-1
+        = "投稿日時: #{datetime_format(comment.created_at)}"
