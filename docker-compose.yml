@@ -18,6 +18,9 @@ services:
       - db
       - db_test
       - elasticsearch
+      - redis
+  redis:
+    image: redis
   db:
     image: mysql:5.7
     # restart: always
@@ -46,7 +49,6 @@ services:
     image: adminer
     ports:
       - 8080:8080
-  # TODO: あとで整備する
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.3.1
     container_name: elasticsearch

@@ -35,6 +35,7 @@ gem 'slim-rails'
 gem 'gon'
 gem 'gretel'
 gem 'kaminari'
+gem 'redis-rails'
 
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
