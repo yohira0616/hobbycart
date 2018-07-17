@@ -1,0 +1,7 @@
+nav
+  #nav-tab.nav.nav-tabs role="tablist"
+    a#nav-home-tab.nav-item.nav-link.active aria-controls="nav-home" aria-selected="true" data-toggle="tab" href="#nav-home" role="tab"  退会
+#nav-tabContent.tab-content
+  #nav-home.tab-pane.fade.show.active aria-labelledby="nav-home-tab" role="tabpanel"
+    p.mt-3 こちらからアカウントの削除が行えます。
+    = button_to 'アカウント削除',user_path(id: current_user.id), method: :delete, class: 'btn btn-danger'
