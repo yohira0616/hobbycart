@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hobbycart-production
+  labels:
+    name: hobbycart-production
+spec:
+  ports:
+  - port: 3000
+  selector:
+    name: hobbycart-prodcution
+  type: LoadBalancer
