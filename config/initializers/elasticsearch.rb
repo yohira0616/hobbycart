@@ -1,4 +1,4 @@
-Elasticsearch::Model.client =
-  Elasticsearch::Client.new hosts: [
-    {host: 'elasticsearch',
-     port: '9200'}]
+# Elasticsearch::Model.client =
+#   Elasticsearch::Client.new hosts: [
+#     {host: 'elasticsearch',
+#      port: '9200'}]
