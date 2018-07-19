@@ -1,0 +1,19 @@
+# apサーバのdeploymentファイル
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: hobbycart-production
+  name: hobbycart-prodcution
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hobbycart-production
+    spec:
+      containers:
+        - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v1
+          name: hobbycart-production
+          ports:
+          - containerPort: 3000
