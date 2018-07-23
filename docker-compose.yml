@@ -21,17 +21,18 @@ services:
       - redis
   redis:
     image: redis
-#  db:
-#    image: mysql:5.7
-#    volumes:
-#      - hobbycart-db-data:/var/lib/mysql
-#    ports:
-#      - "4306:3306"
-#    environment:
-#      MYSQL_ROOT_PASSWORD: example
-#      MYSQL_USER: hobbycart
-#      MYSQL_PASSWORD: hobbycart11
-#      MYSQL_DATABASE: hobbycart_development
+  db_local:
+    image: mysql:5.7
+    volumes:
+      - hobbycart-db-data:/var/lib/mysql
+    ports:
+      - "4306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: hobbycart
+      MYSQL_PASSWORD: hobbycart11
+      MYSQL_DATABASE: hobbycart_development
+  # GCP cloud sql
   db:
     image: "gcr.io/cloudsql-docker/gce-proxy"
     command:
