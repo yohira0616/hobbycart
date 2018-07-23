@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hobbycart-production
+  name: hobbycart-production-ingress
 spec:
   backend:
     serviceName: hobbycart-production
-    servicePort: 3000
+    servicePort: 8080
     
