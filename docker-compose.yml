@@ -21,18 +21,27 @@ services:
       - redis
   redis:
     image: redis
+#  db:
+#    image: mysql:5.7
+#    volumes:
+#      - hobbycart-db-data:/var/lib/mysql
+#    ports:
+#      - "4306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: example
+#      MYSQL_USER: hobbycart
+#      MYSQL_PASSWORD: hobbycart11
+#      MYSQL_DATABASE: hobbycart_development
   db:
-    image: mysql:5.7
-    # restart: always
+    image: "gcr.io/cloudsql-docker/gce-proxy"
+    command:
+      ["/cloud_sql_proxy",
+       "-instances=compact-nirvana-140509:asia-northeast1:hobbycart=tcp:0.0.0.0:3306",
+       "-credential_file=/config/compact-nirvana-140509-11f7bcd62916.json"]
     volumes:
-      - hobbycart-db-data:/var/lib/mysql
+      - "./compact-nirvana-140509-11f7bcd62916.json:/config/compact-nirvana-140509-11f7bcd62916.json"
     ports:
-      - "4306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_USER: hobbycart
-      MYSQL_PASSWORD: hobbycart11
-      MYSQL_DATABASE: hobbycart_development
+      - "3306:3306"
   db_test:
     image: mysql:5.7
     # restart: always

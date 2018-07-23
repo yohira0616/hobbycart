@@ -5,11 +5,11 @@ default: &default
   host: db
   port: 3306
   username: hobbycart
-  password: hobbycart11
+  password: <%= ENV['DB_PASS'] %>
 
 development:
   <<: *default
-  database: hobbycart_development
+  database: hobbycart
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
