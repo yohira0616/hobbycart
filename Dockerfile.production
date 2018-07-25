@@ -13,8 +13,9 @@ RUN gem update
 COPY . /hobbycart
 
 RUN bundle install && yarn install
+RUN bundle exec rake assets:precompile
 
 EXPOSE 3000
 
-CMD bundle exec rails s -b 0.0.0.0 RAILS_ENV=production
+CMD bundle exec rails s -b 0.0.0.0 -e production
 
