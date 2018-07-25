@@ -21,4 +21,4 @@ test:
 
 production:
   <<: *default
-  database: hobbycart_production
+  database: hobbycart
