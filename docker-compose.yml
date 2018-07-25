@@ -2,6 +2,13 @@ version: '3.3'
 services:
   #nginx:
   #  image: nginx
+  # 本番用のイメージファイル
+  prod_ap:
+    image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v5
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
   ap:
     build: .
     volumes:
