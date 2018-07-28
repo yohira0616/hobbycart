@@ -13,7 +13,7 @@ spec:
         name: hobbycart-production
     spec:
       containers:
-        - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v1
+        - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v8
           name: hobbycart-production
           ports:
           - containerPort: 3000

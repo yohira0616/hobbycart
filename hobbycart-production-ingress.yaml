@@ -5,5 +5,5 @@ metadata:
 spec:
   backend:
     serviceName: hobbycart-production
-    servicePort: 8080
+    servicePort: 3000
     
