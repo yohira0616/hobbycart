@@ -29,6 +29,6 @@ application up and running.
 * TBD
 
 ## Deployment instructions
-* TBD
 
-
+### Cloud SQLとの接続
+* https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine?hl=ja
