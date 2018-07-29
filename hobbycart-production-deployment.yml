@@ -17,6 +17,6 @@ spec:
           name: hobbycart-production
           envFrom:
           - configMapRef:
-            name: hobbycart-config
+              name: hobbycart-config
           ports:
           - containerPort: 3000
