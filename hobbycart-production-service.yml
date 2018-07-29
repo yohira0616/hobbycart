@@ -8,5 +8,5 @@ spec:
   ports:
   - port: 3000
   selector:
-    name: hobbycart-prodcution
+    name: hobbycart-production
   type: LoadBalancer

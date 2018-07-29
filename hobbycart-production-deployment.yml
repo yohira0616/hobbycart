@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     name: hobbycart-production
-  name: hobbycart-prodcution
+  name: hobbycart-production
 spec:
   replicas: 1
   template:
