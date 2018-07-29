@@ -3,22 +3,32 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+##  Ruby version
 
-* Ruby version
+* 2.5.1
 
-* System dependencies
+##  System dependencies
 
-* Configuration
+* TBD
 
-* Database creation
 
-* Database initialization
+##  Configuration
+* TBD
 
-* How to run the test suite
+## Database creation
+* Rails way
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database initialization
+* TBD
 
-* Deployment instructions
+## How to run the test suite
+* TBD
 
-* ...
+## Services (job queues, cache servers, search engines, etc.)
+
+* TBD
+
+## Deployment instructions
+* TBD
+
+
