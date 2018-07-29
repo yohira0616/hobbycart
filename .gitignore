@@ -38,3 +38,5 @@ yarn-debug.log*
 cloud_sql_proxy
 compact-nirvana-140509-11f7bcd62916.json
 k8s-config.yml
+
+add-db-users.sh
