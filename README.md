@@ -30,5 +30,11 @@ application up and running.
 
 ## Deployment instructions
 
+### イメージの作成
+* TBD
+
+### GoogleのDockerHubへイメージをアップロード
+* TBD
+
 ### Cloud SQLとの接続
 * https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine?hl=ja

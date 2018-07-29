@@ -21,4 +21,10 @@ test:
 
 production:
   <<: *default
-  database: hobbycart
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  host: localhost
+  port: 3306
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWARD'] %>

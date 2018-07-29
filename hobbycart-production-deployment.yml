@@ -15,8 +15,35 @@ spec:
       containers:
         - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v8
           name: hobbycart-production
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: 127.0.0.1:3306
+            # These secrets are required to start the pod.
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: password
           envFrom:
           - configMapRef:
               name: hobbycart-config
           ports:
           - containerPort: 3000
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-instances=compact-nirvana-140509:asia-northeast1:hobbycart=tcp:3306",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
