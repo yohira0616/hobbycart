@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hobbycart-config
+data:
+  RAILS_ENV:
+  DB_PASS:
+  RAILS_SERVE_STATIC_FILES: 1
+  TWITTER_KEY:
+  TWITTER_SECRET:
+  SECRET_KEY_BASE:

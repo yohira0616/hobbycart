@@ -15,5 +15,8 @@ spec:
       containers:
         - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v8
           name: hobbycart-production
+          envFrom:
+          - configMapRef:
+            name: hobbycart-config
           ports:
           - containerPort: 3000
