@@ -37,3 +37,4 @@ yarn-debug.log*
 .env
 cloud_sql_proxy
 compact-nirvana-140509-11f7bcd62916.json
+k8s-config.yml
