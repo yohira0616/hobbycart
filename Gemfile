@@ -36,6 +36,7 @@ gem 'gon'
 gem 'gretel'
 gem 'kaminari'
 gem 'redis-rails'
+gem 'appengine'
 
 # gcp
 gem "google-cloud-storage", "~> 1.3", require: false

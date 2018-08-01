@@ -13,7 +13,7 @@ spec:
         name: hobbycart-production
     spec:
       containers:
-        - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v8
+        - image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v11
           name: hobbycart-production
           env:
             - name: WORDPRESS_DB_HOST
