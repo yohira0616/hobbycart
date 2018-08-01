@@ -1,5 +1,5 @@
 # GAE用
-entrypoint: bundle exec rails server --port $PORT -e production
+entrypoint: bundle exec rackup --port $PORT
 env: flex
 runtime: ruby
 
