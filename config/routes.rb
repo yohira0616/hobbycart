@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # gae health check
+  get '/_ah/health' => 'health_check#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'top#index'
 end
