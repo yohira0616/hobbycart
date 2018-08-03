@@ -35,7 +35,7 @@ gem 'slim-rails'
 gem 'gon'
 gem 'gretel'
 gem 'kaminari'
-gem 'redis-rails'
+# gem 'redis-rails'
 gem 'appengine'
 
 # gcp

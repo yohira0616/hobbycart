@@ -4,10 +4,8 @@ env: flex
 runtime: ruby
 
 env_variables:
-  SECRET_KEY_BASE: 4536612319997edc4997095aad3afaabe7b2fd594156df445bbf15d0149994de0a1c5d30510a791d3b09b3653a7722ae896808347c9c272089b74dfcc5c6d6e3
+  SECRET_KEY_BASE: 5971d79ba16efb26dc639acd666f39894d5b2e15faa16b571bd6b26700b08adaa383e2a4982c9fa2db0d79068e5be81c7120c00a1f11c8ce243c1b62798a23ea
   TWITTER_KEY: MXhIE0qnx06re1HXTnRcIzb5h
   TWITTER_SECRET: 1eXo1IkUwXyiiIXpRaSrgqa6gJtCNbQfMPs3Iso21uwWwJixp9
-  DB_PASSWORD: hobbycartdb
-  DB_USER: hobbycart
 beta_settings:
-  cloud_sql_instances: hobbycart-211913:asia-northeast1:hobbycartdb
+  cloud_sql_instances: hobbycart1:asia-northeast1:hobbycart-db-instance
