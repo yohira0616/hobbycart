@@ -17,16 +17,9 @@ local:
 # Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
-  project: compact-nirvana-140509
+  project: hobbycart1
   credentials: <%= Rails.root.join("compact-nirvana-140509-11f7bcd62916.json") %>
-  bucket: hobbycart
-
-# Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
-# microsoft:
-#   service: AzureStorage
-#   storage_account_name: your_account_name
-#   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
-#   container: your_container_name
+  bucket: hobbycart-storage
 
 # mirror:
 #   service: Mirror

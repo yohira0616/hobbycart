@@ -2,20 +2,22 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  host: db
   port: 3306
-  username: hobbycart
-  password: <%= ENV['DB_PASS'] %>
 
 development:
   <<: *default
-  database: hobbycart
+  host: db
+  username: hobbycart
+  password: hobbycart11
+  database: hobbycart_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  username: hobbycart
+  password: hobbycart11
   host: db_test
   database: hobbycart_test
 
@@ -24,7 +26,6 @@ production:
   pool: 5
   timeout: 5000
   database: hobbycart_production
-  username: hobbycart
-  password: hobbycartdb
+  username: <%= ENV['CLOUD_SQL_USER_NAME'] %>
+  password: <%= ENV['CLOUD_SQL_PASSWORD'] %>
   socket: /cloudsql/hobbycart1:asia-northeast1:hobbycart-db-instance
-  # host: /cloudsql/hobbycart-211913:asia-northeast1:hobbycartdb
