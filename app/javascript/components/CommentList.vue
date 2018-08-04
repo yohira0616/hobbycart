@@ -3,7 +3,9 @@
     <p class="card-text">この商品へのコメント</p>
     <p class="card-text" v-if="!this.comments">この商品へのコメントはまだありません</p>
     <div v-for="comment in this.comments">
-      <CommentCard></CommentCard>
+      <CommentCard :avatar-attached="comment.avatarAttached" :avatar-path="comment.avatarPath"
+                   :screen-name="comment.screenName" :body="comment.body"
+                   :created-at="comment.createdAt"></CommentCard>
     </div>
   </div>
 
@@ -36,6 +38,7 @@
         const url = `/api/items/${this.itemId}/comments`
         axios.get(url)
           .then((res) => {
+            console.log(res.data.comments)
             this.comments = res.data.comments
           })
           .catch((err) => {

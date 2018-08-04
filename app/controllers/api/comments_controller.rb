@@ -4,7 +4,21 @@ module Api
 
     def index
       comments = Comment.where(item_id: params[:item_id])
-      render json: {comments: comments}, status: 200
+      comment_object = comments.map do |comment|
+        avatar_path = if comment.user.avatar.attached?
+                       url_for(comment.user.avatar)
+                     else
+                       ''
+                     end
+        {
+          avatarAttached: comment.user.avatar.attached?,
+          avatarPath: avatar_path,
+          screenName: comment.user.screen_name,
+          body: comment.body,
+          createdAt: comment.created_at
+        }
+      end
+      render json: {comments: comment_object}, status: 200
     end
 
     def create
