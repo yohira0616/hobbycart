@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card-body card-text text-right">
-          <i class="fas fa-trash mr-1 color-danger" role="button" @click="$emit('destroy',1)"></i>
+          <i class="fas fa-trash mr-1 color-danger" role="button" @click="$emit('destroy',id)"></i>
           投稿日時: {{this.createdAtToDateFormat}}
         </div>
       </div>
