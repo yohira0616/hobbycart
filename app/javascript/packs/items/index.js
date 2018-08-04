@@ -3,6 +3,7 @@ import ReviewForm from '../../components/ReviewForm'
 import CommentForm from '../../components/CommentForm'
 import GoodButton from '../../components/GoodButton'
 import HelloWorld from '../../components/HelloWorld'
+import CommentList from '../../components/CommentList'
 
 document.addEventListener('DOMContentLoaded', () => {
   const commentFormDom = document.querySelectorAll('.comment-form')
@@ -26,11 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // new Vue({
-  //   el: '#hello-world',
-  //   template: '<HelloWorld />',
-  //   components: {HelloWorld}
-  // })
+  const commentList = document.querySelectorAll('.comment-list')
+  commentList.forEach((elem) => {
+    const itemId = Number(elem.dataset.itemId)
+    new Vue({
+      el: elem,
+      template: `<CommentList item-id="${itemId}" />`,
+      components: {CommentList}
+    })
+  })
 
 
   console.log('render done!')

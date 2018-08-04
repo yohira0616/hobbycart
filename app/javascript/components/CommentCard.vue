@@ -5,7 +5,7 @@
         <div class="text-center">yohira_dev</div>
       </div>
       <div class="col-sm-10">
-        <div class="card-body card-text"><p>コメントてすと</p></div>
+        <div class="card-body card-text"><p>TODO implement your comment component</p></div>
       </div>
     </div>
     <div class="row">
@@ -26,21 +26,21 @@
     name: "CommentCard",
     props: {
       avatarAttached: {
-        required: true
+        //required: true
       },
       avatarPath: {
         type: String
       },
       screenName: {
         type: String,
-        required: true
+        //required: true
       },
       body: {
         type: String,
-        required: true
+        //required: true
       },
       createdAt: {
-        required: true
+        //required: true
       }
     },
     data: function () {
