@@ -17,7 +17,7 @@
       <div class="col-sm-12">
         <div class="card-body card-text text-right">
           <i class="fas fa-trash mr-1 color-danger" role="button" @click="$emit('destroy',1)"></i>
-          投稿日時: 2018年07月15日 11:07:52
+          投稿日時: {{this.createdAtToDateFormat}}
         </div>
       </div>
     </div>
@@ -65,8 +65,8 @@
       }
     },
     computed: {
-      updatedAtToDateFormat(){
-        return dateFormat(this.comment.created_at,"yyyy年mm月dd日")
+      createdAtToDateFormat() {
+        return dateFormat(this.createdAt, "yyyy年mm月dd日 hh:mm:ss")
       }
 
     }

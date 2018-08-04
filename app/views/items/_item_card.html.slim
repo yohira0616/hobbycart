@@ -20,15 +20,15 @@
         = render 'items/purchase_button', item: item
 
 
-    // TODO vue化する
     .comment-list data-item-id="#{item.id}"
 
-    p.card-text この商品へのコメント
-    - if item.comments.blank?
-      p.card-text この商品へのコメントはまだありません
-    - else
-      - item.comments.each do |comment|
-        = render 'items/comment_card', comment: comment
+    // 完全vue化できたら消す
+    / p.card-text この商品へのコメント
+    / - if item.comments.blank?
+    /   p.card-text この商品へのコメントはまだありません
+    / - else
+    /   - item.comments.each do |comment|
+    /     = render 'items/comment_card', comment: comment
 
     .comment-form data-item-id="#{item.id}"
 
