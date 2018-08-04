@@ -34,6 +34,7 @@
         axios.post(url, params)
           .then((res) => {
             this.body = ''
+            window.location.reload()
           })
           .catch((err) => {
             console.log(err)

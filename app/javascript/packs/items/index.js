@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue.esm'
+import Notifications from 'vue-notification'
 import ReviewForm from '../../components/ReviewForm'
 import CommentForm from '../../components/CommentForm'
 import GoodButton from '../../components/GoodButton'
@@ -6,6 +7,8 @@ import HelloWorld from '../../components/HelloWorld'
 import CommentList from '../../components/CommentList'
 
 document.addEventListener('DOMContentLoaded', () => {
+  Vue.use(Notifications)
+
   const commentFormDom = document.querySelectorAll('.comment-form')
   commentFormDom.forEach((elem)=>{
     const itemId = Number(elem.dataset.itemId)
