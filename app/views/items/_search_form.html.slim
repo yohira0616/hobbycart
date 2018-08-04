@@ -1,4 +1,12 @@
-form
+= search_form_for @q do |f|
+  .row
+    .form-group.mb-2.col-sm-6
+      = f.search_field :name_cont, class: 'form-control form-control-lg', placeholder: '検索キーワードを入力してください'
+    .col-sm-2
+      = f.submit '検索', class: 'btn btn-primary btn-lg mb-2'
+
+/ TODO: elasticsearch化
+/form
   .row
     .form-group.mb-2.col-sm-6
       input.form-control.form-control-lg placeholder="検索キーワードを入力してください" type="text"
