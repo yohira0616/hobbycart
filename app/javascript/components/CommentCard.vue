@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card-body card-text text-right">
-          <i class="fas fa-trash mr-1 color-danger" @click="trashButtonClick"></i>
+          <i class="fas fa-trash mr-1 color-danger" role="button" @click="$emit('destroy',1)"></i>
           投稿日時: 2018年07月15日 11:07:52
         </div>
       </div>
@@ -27,10 +27,14 @@
 
 <script>
   import axios from '../modules/axios'
+  import dateFormat from 'dateformat'
 
   export default {
     name: "CommentCard",
     props: {
+      id: {
+        required: true
+      },
       avatarAttached: {
         required: true
       },
@@ -60,7 +64,10 @@
         // TODO
       }
     },
-    computed:{
+    computed: {
+      updatedAtToDateFormat(){
+        return dateFormat(this.comment.created_at,"yyyy年mm月dd日")
+      }
 
     }
   }

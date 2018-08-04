@@ -11,6 +11,7 @@ module Api
                        ''
                      end
         {
+          id: comment.id,
           avatarAttached: comment.user.avatar.attached?,
           avatarPath: avatar_path,
           screenName: comment.user.screen_name,

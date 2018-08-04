@@ -3,9 +3,10 @@
     <p class="card-text">この商品へのコメント</p>
     <p class="card-text" v-if="!this.comments">この商品へのコメントはまだありません</p>
     <div v-for="comment in this.comments">
-      <CommentCard :avatar-attached="comment.avatarAttached" :avatar-path="comment.avatarPath"
+      <CommentCard :id="comment.id"
+                   :avatar-attached="comment.avatarAttached" :avatar-path="comment.avatarPath"
                    :screen-name="comment.screenName" :body="comment.body"
-                   :created-at="comment.createdAt"></CommentCard>
+                   :created-at="comment.createdAt" v-on:destroy="commentDestroy"></CommentCard>
     </div>
   </div>
 
@@ -44,6 +45,10 @@
           .catch((err) => {
             console.error(err)
           })
+      },
+      commentDestroy(id){
+        console.log(id)
+        console.log('comment destroy')
       }
     }
   }
