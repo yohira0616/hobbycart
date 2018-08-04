@@ -5895,6 +5895,10 @@ vue-loader@14.2.2:
     vue-style-loader "^4.0.1"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-notification@^1.3.12:
+  version "1.3.12"
+  resolved "https://registry.yarnpkg.com/vue-notification/-/vue-notification-1.3.12.tgz#784aef263cd4029fc7f6431a8320aa23a740a696"
+
 vue-style-loader@^4.0.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.1.tgz#7c1d051b24f60b1707602b549ed50b4c8111d316"
