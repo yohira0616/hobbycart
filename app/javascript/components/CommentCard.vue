@@ -59,10 +59,6 @@
       }
     },
     methods: {
-      trashButtonClick() {
-        console.log('trash button clicked')
-        // TODO
-      }
     },
     computed: {
       createdAtToDateFormat() {

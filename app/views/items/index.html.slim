@@ -1,6 +1,8 @@
 .container
   = render 'items/search_form'
-  #hello-world
+  - if @items.blank?
+    p お探しの商品は見つかりませんでした
+
   - @items.each do |item|
     = render 'item_card', item: item
 
