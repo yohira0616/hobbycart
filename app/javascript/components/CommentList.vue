@@ -46,9 +46,16 @@
             console.error(err)
           })
       },
-      commentDestroy(id){
-        console.log(id)
-        console.log('comment destroy')
+      commentDestroy(id) {
+        const url = `/api/comments/${id}`
+        axios.delete(url)
+          .then((res) => {
+            window.alert('削除しました')
+            console.log(res.data)
+          })
+          .catch((err) => {
+            console.error(err)
+          })
       }
     }
   }

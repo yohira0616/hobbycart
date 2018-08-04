@@ -32,7 +32,7 @@ module Api
     end
 
     def destroy
-      Comment.destroy!(params[:id])
+      Comment.find(params[:id]).destroy!
       render json: {}, status: 200
     end
 
