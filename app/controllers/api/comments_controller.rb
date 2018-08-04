@@ -1,6 +1,11 @@
 module Api
   class CommentsController < ::ApplicationController
-    before_action :require_login
+    before_action :require_login, only: %i(create destroy)
+
+    def index
+      comments = Comment.where(item_id: params[:item_id])
+      render json: {comments: comments}, status: 200
+    end
 
     def create
       Comment.create!(

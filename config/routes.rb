@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :items, only: [], shallow: true do
-      resources :comments, only: %i(create destroy)
+      resources :comments, only: %i(index create destroy)
       resources :reviews, only: %i(create destroy)
       resources :reactions, only: %i(create destroy)
     end
