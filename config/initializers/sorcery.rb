@@ -107,7 +107,8 @@ Rails.application.config.sorcery.configure do |config|
 
   config.twitter.key = ENV['TWITTER_KEY']
   config.twitter.secret = ENV['TWITTER_SECRET']
-  config.twitter.callback_url = "http://localhost:3000/auth/twitter/callback"
+  address = Rails.env.production? ? 'https://hobbycart1.appspot.com' : 'http://localhost:3000'
+  config.twitter.callback_url = "#{address}/auth/twitter/callback"
   config.twitter.user_info_mapping = {email: "screen_name", screen_name: "screen_name"}
   #
   # config.facebook.key = ""
