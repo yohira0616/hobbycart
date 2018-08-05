@@ -41,8 +41,6 @@ gem 'appengine'
 # gcp
 gem "google-cloud-storage", "~> 1.3", require: false
 
-# gem 'elasticsearch-rails'
-# gem 'elasticsearch-model'
 
 # Use Capistrano for deployment
 
