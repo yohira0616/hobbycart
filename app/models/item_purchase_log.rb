@@ -3,6 +3,9 @@ class ItemPurchaseLog < ApplicationRecord
   belongs_to :item
   belongs_to :user
 
+  validates :name, presence: true
+  validates :price, presence: true
+
   class << self
     def purchase!(user, item)
       create!(
