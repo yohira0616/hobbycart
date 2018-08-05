@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Reaction, type: :model do
+RSpec.describe review, type: :model do
 
   describe 'validations' do
+
 
   end
 end
