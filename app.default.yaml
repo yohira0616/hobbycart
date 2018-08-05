@@ -1,0 +1,13 @@
+# GAE用
+entrypoint: bundle exec rackup --port $PORT
+env: flex
+runtime: ruby
+
+env_variables:
+  SECRET_KEY_BASE:
+  TWITTER_KEY:
+  TWITTER_SECRET:
+  CLOUD_SQL_USER_NAME:
+  CLOUD_SQL_PASSWORD:
+beta_settings:
+  cloud_sql_instances:
