@@ -1,19 +1,21 @@
-h1 Listing item_purchase_logs
+h1 購入履歴
 
-table
+table.table
   thead
     tr
-      th
-      th
-      th
-
+      th scope="col" id
+      th scope="col" 購入者名
+      th scope="col" 購入商品名
+      th scope="col" 購入確定額
+      th scope="col" 作成日時
+      th scope="col" 更新日時
   tbody
-    - @item_purchase_logs.each do |item_purchase_log|
+    - @item_purchase_logs.each do |ipl|
       tr
-        td = link_to 'Show', item_purchase_log
-        td = link_to 'Edit', edit_item_purchase_log_path(item_purchase_log)
-        td = link_to 'Destroy', item_purchase_log, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Item purchase log', new_item_purchase_log_path
+        td = ipl.id
+        td = ipl.user.screen_name
+        td = ipl.item.name
+        td = ipl.price
+        td = ipl.created_at
+        td = ipl.updated_at
+        
