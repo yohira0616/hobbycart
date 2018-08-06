@@ -18,7 +18,7 @@ local:
 google:
   service: GCS
   project: hobbycart1
-  credentials: <%= Rails.root.join("compact-nirvana-140509-11f7bcd62916.json") %>
+  credentials: <%= Rails.root.join("hobbycart1-84a9f2ded648.json") %>
   bucket: hobbycart-storage
 
 # mirror:

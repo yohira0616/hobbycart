@@ -29,7 +29,6 @@ services:
     command: bash -c "(bundle check || bundle install) && bundle exec rails s -b '0.0.0.0'"
     volumes:
       - .:/hobbycart
-      #- gems:/usr/local/bundle
     depends_on:
       - db
       - db_test
@@ -63,7 +62,6 @@ services:
 #      - "3306:3306"
   db_test:
     image: mysql:5.7
-    # restart: always
     volumes:
       - hobbycart-test-db-data:/var/lib/mysql
     ports:

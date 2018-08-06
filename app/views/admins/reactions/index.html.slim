@@ -1,19 +1,21 @@
-h1 Listing reactions
+h1 リアクション
 
-table
+table.table
   thead
     tr
-      th
-      th
-      th
-
+      th scope="col" id
+      th scope="col" ユーザー
+      th scope="col" 対象商品
+      th scope="col" リアクションタイプ
+      th scope="col" スタンプコード
+      th scope="col" 作成日時
   tbody
     - @reactions.each do |reaction|
       tr
-        td = link_to 'Show', reaction
-        td = link_to 'Edit', edit_reaction_path(reaction)
-        td = link_to 'Destroy', reaction, data: { confirm: 'Are you sure?' }, method: :delete
+        td = reaction.id
+        td = reaction.user.screen_name
+        td = reaction.item.name
+        td = 1
+        td = "いいね！"
+        td = datetime_format(reaction.created_at)
 
-br
-
-= link_to 'New Reaction', new_reaction_path
