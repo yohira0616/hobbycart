@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login
 
   # 退会
   def destroy
