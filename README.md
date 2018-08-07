@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+簡単なECサイトを模したポートフォリオ用のシステムです。
 
 ##  Ruby version
 
@@ -9,32 +8,34 @@ application up and running.
 
 ##  System dependencies
 
-* TBD
+* GoogleAppEngine
+* GoogleCloudStorage
+* GoogleCloudSQL
+* ローカル開発の構成はdocker-compose.ymlを参照
 
 
 ##  Configuration
-* TBD
+* ローカル環境は環境変数の保存先としてdotenvを使用
+* GAEのデプロイ時にはapp.ymlを使用
 
 ## Database creation
-* Rails way
+* ローカル開発環境はmysql imageを使用
+* productionはGoogleCloudSQLを使用
 
 ## Database initialization
-* TBD
+* `bundle exec rake db:migrate`
 
 ## How to run the test suite
-* TBD
-
-## Services (job queues, cache servers, search engines, etc.)
-
-* TBD
+* `bundle exec rspec`
 
 ## Deployment instructions
+* `gloud app deploy`
 
-### イメージの作成
-* TBD
-
-### GoogleのDockerHubへイメージをアップロード
-* TBD
+## Frontend
+* Vue + Bootstrap + Webpacker
 
 ### Cloud SQLとの接続
 * https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine?hl=ja
+
+## TODO
+* Kubenetes化
