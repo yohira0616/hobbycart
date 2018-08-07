@@ -4,7 +4,7 @@ services:
     image: nginx
   # 本番確認用のイメージファイル
 #  prod_ap:
-#    image: asia.gcr.io/compact-nirvana-140509/hobbycart-production:v7
+#    image:
 #    ports:
 #      - "3001:3000"
 #    stdin_open: true
@@ -15,9 +15,9 @@ services:
 #      RAILS_ENV: production
 #      DB_PASS:
 #      RAILS_SERVE_STATIC_FILES: 1
-#      TWITTER_KEY: MXhIE0qnx06re1HXTnRcIzb5h
-#      TWITTER_SECRET: 1eXo1IkUwXyiiIXpRaSrgqa6gJtCNbQfMPs3Iso21uwWwJixp9
-#      SECRET_KEY_BASE: 4536612319997edc4997095aad3afaabe7b2fd594156df445bbf15d0149994de0a1c5d30510a791d3b09b3653a7722ae896808347c9c272089b74dfcc5c6d6e3
+#      TWITTER_KEY:
+#      TWITTER_SECRET:
+#      SECRET_KEY_BASE:
   ap:
     build: ./Dockerfile.develop
     volumes:
@@ -54,7 +54,7 @@ services:
 #    image: "gcr.io/cloudsql-docker/gce-proxy"
 #    command:
 #      ["/cloud_sql_proxy",
-#       "-instances=compact-nirvana-140509:asia-northeast1:hobbycart=tcp:0.0.0.0:3306",
+#       "-instances=TODO",
 #       "-credential_file=/config/compact-nirvana-140509-11f7bcd62916.json"]
 #    volumes:
 #      - "./compact-nirvana-140509-11f7bcd62916.json:/config/compact-nirvana-140509-11f7bcd62916.json"
