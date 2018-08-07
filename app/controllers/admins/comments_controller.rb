@@ -6,7 +6,7 @@ module Admins
     # GET /comments.json
     def index
       @q = Comment.ransack(params[:q])
-      @comments = @q.result.includes(:items, :users).page(params[:page])
+      @comments = @q.result.includes([:item, :user]).page(params[:page])
     end
 
     # GET /comments/1
